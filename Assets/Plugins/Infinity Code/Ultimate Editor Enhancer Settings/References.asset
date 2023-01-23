@@ -175,4 +175,10 @@ MonoBehaviour:
     customWindowSize: {x: 400, y: 300}
     alignWindowToBar: 1
     windowMode: 0
-  _sceneHistory: []
+  _sceneHistory:
+  - name: Demo
+    path: Assets/AssetsPack/Isometric Tower Defense Pack/Scene/Demo.unity
+  - name: Demo
+    path: Assets/AssetsPack/Isometric Medieval Pack/Scene/Demo.unity
+  - name: SampleScene
+    path: Assets/Scenes/SampleScene.unity
