@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using InfinityCode.UltimateEditorEnhancer;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
@@ -11,21 +10,24 @@ namespace CodeBase.Constructions {
         [SerializeField] private Tilemap _mainTilemap;
         [SerializeField] private Tilemap _tempTilemap;
 
-        private static Dictionary<TileType, TileBase> _tileBases = new();
+        public static GridBuildingsSystem current;
+        private static Dictionary<TileType, TileBase> tileBases = new();
+        
         private Building _tempBuilding;
         private Vector3 _previousPosition;
         private BoundsInt _previousArea;
         private Camera _mainCamera;
 
         private void Awake() {
+            current = this;
             _mainCamera = Camera.main;
         }
 
         private void Start() {
-            _tileBases.Add(TileType.Empty, null);
-            _tileBases.Add(TileType.White, Resources.Load<TileBase>("Tiles/TempTile"));
-            _tileBases.Add(TileType.Green, Resources.Load<TileBase>("Tiles/GreenTile"));
-            _tileBases.Add(TileType.Red, Resources.Load<TileBase>("Tiles/RedTile"));
+            tileBases.Add(TileType.Empty, null);
+            tileBases.Add(TileType.White, Resources.Load<TileBase>("Assets/Prefabs/Tiles/White.asset"));
+            tileBases.Add(TileType.Green, Resources.Load<TileBase>("/Tiles/Green"));
+            tileBases.Add(TileType.Red, Resources.Load<TileBase>("/Tiles/Red"));
         }
 
         private void Update() {
@@ -74,7 +76,7 @@ namespace CodeBase.Constructions {
 
         private static void FillTiles(TileBase[] array, TileType type) {
             for (int i = 0; i < array.Length; i++) {
-                array[i] = _tileBases[type];
+                array[i] = tileBases[type];
             }
         }
 
@@ -101,8 +103,8 @@ namespace CodeBase.Constructions {
             TileBase[] tileArray = new TileBase[size];
 
             for (int i = 0; i < baseArray.Length; i++) {
-                if (baseArray[i] == _tileBases[TileType.White]) {
-                    tileArray[i] = _tileBases[TileType.Green];
+                if (baseArray[i] == tileBases[TileType.White]) {
+                    tileArray[i] = tileBases[TileType.Green];
                 }
                 else {
                     FillTiles(tileArray, TileType.Red);
@@ -112,6 +114,19 @@ namespace CodeBase.Constructions {
             
             _tempTilemap.SetTilesBlock(buildingArea, tileArray);
             _previousArea = buildingArea;
+        }
+
+        public bool CanTakeArea(BoundsInt area) {
+            TileBase[] baseArray = GetTilesBlock(area, _mainTilemap);
+
+            foreach (var tileBase in baseArray) {
+                if (tileBase != tileBases[TileType.White]) {
+                    Debug.Log("Cannot place here");
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 
