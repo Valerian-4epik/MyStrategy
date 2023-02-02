@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 23
-  productGUID: 00000000000000000000000000000000
+  productGUID: d4fa97d83d0df0f4d94c0711b68652c2
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -741,7 +741,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     : MOBILE_INPUT
     Android: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    Standalone: CROSS_PLATFORM_INPUT
+    Standalone: CROSS_PLATFORM_INPUT;UEE
     Windows Store Apps: MOBILE_INPUT
     iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT
   additionalCompilerArguments: {}

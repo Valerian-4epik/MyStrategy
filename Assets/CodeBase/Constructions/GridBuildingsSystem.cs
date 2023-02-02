@@ -11,7 +11,7 @@ namespace CodeBase.Constructions {
         [SerializeField] private Tilemap _tempTilemap;
 
         public static GridBuildingsSystem current;
-        private static Dictionary<TileType, TileBase> tileBases = new();
+        private static Dictionary<TileType, TileBase> tileBases = new Dictionary<TileType, TileBase>();
         
         private Building _tempBuilding;
         private Vector3 _previousPosition;
@@ -25,7 +25,7 @@ namespace CodeBase.Constructions {
 
         private void Start() {
             tileBases.Add(TileType.Empty, null);
-            tileBases.Add(TileType.White, Resources.Load<TileBase>("Assets/Prefabs/Tiles/White.asset"));
+            tileBases.Add(TileType.White, Resources.Load<TileBase>("/Tiles/White"));
             tileBases.Add(TileType.Green, Resources.Load<TileBase>("/Tiles/Green"));
             tileBases.Add(TileType.Red, Resources.Load<TileBase>("/Tiles/Red"));
         }
@@ -39,7 +39,7 @@ namespace CodeBase.Constructions {
                     return;
 
                 if (!_tempBuilding.Placed) {
-                    Vector2 touchPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                    Vector2 touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     Vector3Int cellPosition = _gridLayout.LocalToCell(touchPosition);
 
                     if (_previousPosition != cellPosition) {

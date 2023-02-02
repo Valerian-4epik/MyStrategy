@@ -176,9 +176,19 @@ MonoBehaviour:
     alignWindowToBar: 1
     windowMode: 0
   _sceneHistory:
+  - name: SampleScene
+    path: Assets/Scenes/SampleScene.unity
+  - name: Game
+    path: Assets/AssetsPack/CityBuildingKit/Scenes/Game.unity
+  - name: Game
+    path: Assets/CityBuildingKit/Scenes/Game.unity
+  - name: AllResources
+    path: Assets/CityBuildingKit/Scenes/AllResources.unity
+  - name: ImportFrameworksHere
+    path: Assets/CityBuildingKit/Scenes/ImportFrameworksHere.unity
+  - name: Map01
+    path: Assets/CityBuildingKit/Scenes/Map01.unity
   - name: Demo
     path: Assets/AssetsPack/Isometric Tower Defense Pack/Scene/Demo.unity
   - name: Demo
     path: Assets/AssetsPack/Isometric Medieval Pack/Scene/Demo.unity
-  - name: SampleScene
-    path: Assets/Scenes/SampleScene.unity
