@@ -177,6 +177,8 @@ MonoBehaviour:
     windowMode: 0
   _sceneHistory:
   - name: SampleScene
+    path: D:/UnityGames/Grid-Building-System-2D/Assets/Scenes/SampleScene.unity
+  - name: SampleScene
     path: Assets/Scenes/SampleScene.unity
   - name: Game
     path: Assets/AssetsPack/CityBuildingKit/Scenes/Game.unity
