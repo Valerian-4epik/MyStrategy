@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GoldHarvester
   m_EditorClassIdentifier: 
   _name: GoldHarvester
+  _sprite: {fileID: 21300000, guid: 3795d829efb42354abf57426b21a8b6d, type: 3}
   _transform: {fileID: 3539544213206302977, guid: 6a0b31d601979de49a94bbf81ff900af,
     type: 3}
   _resourceGeneratorData:

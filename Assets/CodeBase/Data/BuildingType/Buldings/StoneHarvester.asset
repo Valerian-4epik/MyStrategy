@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: StoneHarvester
   m_EditorClassIdentifier: 
   _name: StoneHarvester
+  _sprite: {fileID: 21300000, guid: 9b3709898e5c84042b230a704fe42fe6, type: 3}
   _transform: {fileID: 3861532344286605574, guid: c054ba019008e58499d8e43620c23d99,
     type: 3}
   _resourceGeneratorData:
