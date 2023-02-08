@@ -5,5 +5,7 @@ namespace CodeBase.ResourceSystem.Abstract {
     public class ResourceGeneratorData {
         public float TimerMax;
         public ResourceTypeSo ResourceTypeSo;
+        public float ResourceDetectionRadius;
+        public int MaxResourceAmount;
     }
 }
