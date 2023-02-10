@@ -1,6 +1,4 @@
-using System;
 using CodeBase.BuildingSystem;
-using CodeBase.Data.BuildingType;
 using CodeBase.ResourceSystem.Abstract;
 using UnityEngine;
 

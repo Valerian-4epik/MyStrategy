@@ -178,6 +178,8 @@ MonoBehaviour:
   _sceneHistory:
   - name: SampleScene
     path: Assets/Scenes/SampleScene.unity
+  - name: VladScene
+    path: Assets/_VLAD/VladScene.unity
   - name: DefenderGame
     path: Assets/Scenes/DefenderGame.unity
   - name: GameScene

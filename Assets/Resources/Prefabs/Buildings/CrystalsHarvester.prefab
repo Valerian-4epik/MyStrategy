@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 3815439284932059926}
   - component: {fileID: 8874732502000158653}
   m_Layer: 0
-  m_Name: GoldHarvester
+  m_Name: CrystalsHarvester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
