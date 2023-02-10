@@ -16,6 +16,8 @@ MonoBehaviour:
   _sprite: {fileID: 21300000, guid: 19ac85e4e5fc18f4f8a4cf7990d3d3b0, type: 3}
   _transform: {fileID: 3748678606905272286, guid: 9ff3de77529c1844eadae9e7659de8cc,
     type: 3}
+  _prefab: {fileID: 8459242648148798811, guid: 9ff3de77529c1844eadae9e7659de8cc, type: 3}
+  _minConstructionRadius: 0
   _resourceGeneratorData:
     TimerMax: 0.5
     ResourceTypeSo: {fileID: 11400000, guid: 47b701ea1b6d1d149b4b87c2f85d3743, type: 2}
