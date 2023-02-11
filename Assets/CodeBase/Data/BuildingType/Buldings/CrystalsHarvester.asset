@@ -17,9 +17,9 @@ MonoBehaviour:
   _transform: {fileID: 3539544213206302977, guid: 6a0b31d601979de49a94bbf81ff900af,
     type: 3}
   _prefab: {fileID: 5760581732284533489, guid: 6a0b31d601979de49a94bbf81ff900af, type: 3}
-  _minConstructionRadius: 10
   _resourceGeneratorData:
     TimerMax: 2
-    ResourceTypeSo: {fileID: 11400000, guid: 99a564c207b81d748a1548a1595cabb8, type: 2}
+    ResourceTypeSo: {fileID: 11400000, guid: 6adc3555f18d53947a643c99cb833ded, type: 2}
     ResourceDetectionRadius: 5
-    MaxResourceAmount: 5
+    MaxResourceAmount: 4
+  _minConstructionRadius: 2.5

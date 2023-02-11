@@ -6,5 +6,10 @@ namespace CodeBase.BuildingSystem {
         [SerializeField] private BuildingTypeSo _buildingType;
 
         public BuildingTypeSo BuildingType => _buildingType;
+
+        private void OnDrawGizmos() {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(transform.position, _buildingType.MinConstructionRadius);
+        }
     }
 }
