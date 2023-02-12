@@ -178,6 +178,8 @@ MonoBehaviour:
   _sceneHistory:
   - name: VladScene 01
     path: Assets/_VLAD/Scenes/VladScene 01.unity
+  - name: VladScene 02
+    path: Assets/_VLAD/Scenes/VladScene 02.unity
   - name: SampleScene
     path: Assets/Scenes/SampleScene.unity
   - name: VladScene
