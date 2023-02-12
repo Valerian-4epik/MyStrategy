@@ -176,6 +176,8 @@ MonoBehaviour:
     alignWindowToBar: 1
     windowMode: 0
   _sceneHistory:
+  - name: VladScene 01
+    path: Assets/_VLAD/Scenes/VladScene 01.unity
   - name: SampleScene
     path: Assets/Scenes/SampleScene.unity
   - name: VladScene
