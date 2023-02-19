@@ -32,7 +32,7 @@ namespace CodeBase.BuildingSystem {
             return _buildingType;
         }
         
-        private bool CanSpawnBuilding(BuildingTypeSo buildingType, Vector3 position) {
+        public bool CanSpawnBuilding(BuildingTypeSo buildingType, Vector3 position) {
             BoxCollider2D boxCollider2D = buildingType.Prefab.GetComponent<BoxCollider2D>();
             Collider2D[] collider2DArray =
                 Physics2D.OverlapBoxAll(position + (Vector3)boxCollider2D.offset, boxCollider2D.size, 0);
@@ -48,7 +48,8 @@ namespace CodeBase.BuildingSystem {
                     }
                 }
             }
-            float maxConstructionRadius = 25;   
+            
+            float maxConstructionRadius = 10;   
             collider2DArray = Physics2D.OverlapCircleAll(position, maxConstructionRadius);
             
             foreach (var collider in collider2DArray) {
