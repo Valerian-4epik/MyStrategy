@@ -1,6 +1,8 @@
 using System;
 using CodeBase.Data.BuildingType;
+using CodeBase.ResourceSystem.Abstract;
 using CodeBase.Services.Abstract;
+using CodeBase.UI.BuildingUI;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -14,8 +16,10 @@ namespace CodeBase.BuildingSystem {
         private bool _isSearchBuildingState;
         private BuildingTypeSo _buildingType;
         private SpriteRenderer _spriteRenderer;
+        private ResourceNearbyOverlay _resourceNearbyOverlay;
         
         private void Awake() {
+            _resourceNearbyOverlay = GetComponentInChildren<ResourceNearbyOverlay>();
             Utils.SetupCamera(); //перенести в loadlevelState.
             Hide();
             _isSearchBuildingState = false;
@@ -45,6 +49,7 @@ namespace CodeBase.BuildingSystem {
             _buildingType = buildingType;
             var type = BuildingSystem.Instance.GetActiveBuildingType();
             Show(type.Sprite);
+            _resourceNearbyOverlay.Show(type.ResourceGeneratorData);
             _isSearchBuildingState = true;
         }
         

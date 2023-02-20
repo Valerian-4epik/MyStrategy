@@ -24,7 +24,7 @@ namespace CodeBase.UI.ResourcesUI {
         }
 
         private void Update() {
-            _bar.transform.localScale = new Vector3(-_resourceGenerator.GetTimerNormalized(), 1, 1);
+            _bar.transform.localScale = new Vector3(1 - _resourceGenerator.GetTimerNormalized(), 1, 1);
         }
     }
 }
