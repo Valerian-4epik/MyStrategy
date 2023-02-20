@@ -27,5 +27,23 @@ namespace CodeBase.ResourceSystem {
             _resourceAmountDictionary[resourceType] += amount;
             ResourceAmountChanged?.Invoke(resourceType, _resourceAmountDictionary[resourceType]);
         }
+
+        public bool CanAfford(List<ResourceAmount> resourceAmounts) {
+            foreach (var amount in resourceAmounts) {
+                if (_resourceAmountDictionary[amount.ResourceTypeSo] >= amount.Amount) {
+                }
+                else {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public void SpendResources(List<ResourceAmount> resourceAmounts) {
+            foreach (var amount in resourceAmounts) {
+                _resourceAmountDictionary[amount.ResourceTypeSo] -= amount.Amount;
+            }
+        }
     }
 }

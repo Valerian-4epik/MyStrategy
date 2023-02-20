@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using CodeBase.ResourceSystem;
 using CodeBase.ResourceSystem.Abstract;
 using UnityEngine;
 
@@ -9,7 +11,8 @@ namespace CodeBase.Data.BuildingType {
         [SerializeField] private Transform _transform;
         [SerializeField] private GameObject _prefab;
         [SerializeField] private ResourceGeneratorData _resourceGeneratorData;
-        [SerializeField] private float _minConstructionRadius; 
+        [SerializeField] private float _minConstructionRadius;
+        [SerializeField] private List<ResourceAmount> _constructionResourceCostArray;
 
         public string Name => _name;
         public Sprite Sprite => _sprite;
@@ -17,5 +20,6 @@ namespace CodeBase.Data.BuildingType {
         public GameObject Prefab => _prefab;
         public ResourceGeneratorData ResourceGeneratorData => _resourceGeneratorData;
         public float MinConstructionRadius => _minConstructionRadius;
+        public List<ResourceAmount> ConstructionResourceCostArray => _constructionResourceCostArray;
     }
 }

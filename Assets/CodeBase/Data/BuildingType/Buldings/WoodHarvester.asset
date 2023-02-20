@@ -23,3 +23,6 @@ MonoBehaviour:
     ResourceDetectionRadius: 2
     MaxResourceAmount: 4
   _minConstructionRadius: 0.1
+  _constructionResourceCostArray:
+  - _resourceTypeSo: {fileID: 11400000, guid: 47b701ea1b6d1d149b4b87c2f85d3743, type: 2}
+    _amount: 10

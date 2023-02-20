@@ -19,7 +19,10 @@ namespace CodeBase.BuildingSystem {
         private void Update() {
             if (!Input.GetMouseButtonDown(0) || EventSystem.current.IsPointerOverGameObject()) return;
             if (_buildingType != null && CanSpawnBuilding(_buildingType, Utils.GetMouseWorldPosition())) {
-                Instantiate(_buildingType.Transform, Utils.GetMouseWorldPosition(), Quaternion.identity);
+                if (ResourceSystem.ResourceSystem.Instance.CanAfford(_buildingType.ConstructionResourceCostArray)) {
+                    ResourceSystem.ResourceSystem.Instance.SpendResources(_buildingType.ConstructionResourceCostArray);
+                    Instantiate(_buildingType.Transform, Utils.GetMouseWorldPosition(), Quaternion.identity);
+                }
             }
         }
 
@@ -31,7 +34,7 @@ namespace CodeBase.BuildingSystem {
         public BuildingTypeSo GetActiveBuildingType() {
             return _buildingType;
         }
-        
+
         public bool CanSpawnBuilding(BuildingTypeSo buildingType, Vector3 position) {
             BoxCollider2D boxCollider2D = buildingType.Prefab.GetComponent<BoxCollider2D>();
             Collider2D[] collider2DArray =
@@ -39,7 +42,7 @@ namespace CodeBase.BuildingSystem {
             bool isAreaClear = collider2DArray.Length == 0;
             if (!isAreaClear) return false;
             collider2DArray = Physics2D.OverlapCircleAll(position, buildingType.MinConstructionRadius);
-            
+
             foreach (var collider in collider2DArray) {
                 BuildingTypeHolder buildingTypeHolder = collider.GetComponent<BuildingTypeHolder>();
                 if (buildingTypeHolder != null) {
@@ -48,16 +51,17 @@ namespace CodeBase.BuildingSystem {
                     }
                 }
             }
-            
-            float maxConstructionRadius = 10;   
+
+            float maxConstructionRadius = 10;
             collider2DArray = Physics2D.OverlapCircleAll(position, maxConstructionRadius);
-            
+
             foreach (var collider in collider2DArray) {
                 BuildingTypeHolder buildingTypeHolder = collider.GetComponent<BuildingTypeHolder>();
                 if (buildingTypeHolder != null) {
                     return true;
                 }
             }
+
             return false;
         }
     }
