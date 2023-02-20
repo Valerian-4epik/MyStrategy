@@ -31,6 +31,7 @@ TagManager:
   - Unit
   - Dobbit
   - StoneWall
+  - Red
   layers:
   - Default
   - TransparentFX
@@ -47,7 +48,7 @@ TagManager:
   - LightLayer
   - SFX
   - 
-  - 
+  - RedBox
   - 
   - 
   - 
