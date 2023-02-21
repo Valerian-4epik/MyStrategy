@@ -18,12 +18,13 @@ namespace CodeBase.BuildingSystem {
 
         private void Update() {
             if (!Input.GetMouseButtonDown(0) || EventSystem.current.IsPointerOverGameObject()) return;
-            if (_buildingType != null && CanSpawnBuilding(_buildingType, Utils.GetMouseWorldPosition())) {
-                if (ResourceSystem.ResourceSystem.Instance.CanAfford(_buildingType.ConstructionResourceCostArray)) {
-                    ResourceSystem.ResourceSystem.Instance.SpendResources(_buildingType.ConstructionResourceCostArray);
-                    Instantiate(_buildingType.Transform, Utils.GetMouseWorldPosition(), Quaternion.identity);
-                }
-            }
+            
+            if (_buildingType == null || !CanSpawnBuilding(_buildingType, Utils.GetMouseWorldPosition())) return;
+            
+            if (!ResourceSystem.ResourceSystem.Instance.CanAfford(_buildingType.ConstructionResourceCostArray)) return;
+            
+            ResourceSystem.ResourceSystem.Instance.SpendResources(_buildingType.ConstructionResourceCostArray);
+            Instantiate(_buildingType.Transform, Utils.GetMouseWorldPosition(), Quaternion.identity);
         }
 
         public void SetBuildingType(BuildingTypeSo buildingType) {
