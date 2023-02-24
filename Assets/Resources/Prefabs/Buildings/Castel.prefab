@@ -96,6 +96,8 @@ GameObject:
   - component: {fileID: 6580964078252186627}
   - component: {fileID: -8795144749533837158}
   - component: {fileID: 4393741875279667235}
+  - component: {fileID: -5388321623654609721}
+  - component: {fileID: 8648416300035998869}
   m_Layer: 0
   m_Name: Castel
   m_TagString: Untagged
@@ -170,3 +172,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.43, y: 1.6}
   m_EdgeRadius: 0
+--- !u!114 &-5388321623654609721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8459242648148798811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4882e2c9825c974439ee1850c2f0ffa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthAmountMax: 0
+--- !u!114 &8648416300035998869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8459242648148798811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eedb3ff497f24cf2b9882402aa1c5873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  area:
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Size: {x: 0, y: 0, z: 0}
