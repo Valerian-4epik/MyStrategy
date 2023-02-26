@@ -7,8 +7,21 @@ namespace CodeBase.Constructions {
         public bool Placed { get; private set; }
         public BoundsInt area;
 
+        private HealthSystem _healthSystem;
+
         private void Start() {
-            var healthSystem = GetComponent<HealthSystem>();
+            _healthSystem = GetComponent<HealthSystem>();
+            _healthSystem.Died += OnDied;
+        }
+
+        private void Update() {
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                _healthSystem.TakeDamage(999);
+            }
+        }
+
+        private void OnDied() {
+            Destroy(gameObject);
         }
     }
 }
