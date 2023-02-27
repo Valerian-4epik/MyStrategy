@@ -24,8 +24,16 @@ namespace CodeBase.BuildingSystem.HealthSystem {
             }
         }
 
-        public bool IsDead() => _healthAmount == 0;
-        public int GetHealthAmount() => _healthAmount;
-        public float GetHealthAmountNormalized() => (float)_healthAmount / _healthAmountMax;
+        public bool IsFullHealth() =>
+            _healthAmount == _healthAmountMax;
+        
+        public bool IsDead() =>
+            _healthAmount == 0;
+        
+        public int GetHealthAmount() =>
+            _healthAmount;
+        
+        public float GetHealthAmountNormalized() =>
+            (float)_healthAmount / _healthAmountMax;
     }
 }

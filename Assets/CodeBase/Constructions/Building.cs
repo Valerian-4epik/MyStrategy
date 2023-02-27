@@ -16,7 +16,7 @@ namespace CodeBase.Constructions {
 
         private void Update() {
             if (Input.GetKeyDown(KeyCode.Space)) {
-                _healthSystem.TakeDamage(999);
+                _healthSystem.TakeDamage(9);
             }
         }
 
