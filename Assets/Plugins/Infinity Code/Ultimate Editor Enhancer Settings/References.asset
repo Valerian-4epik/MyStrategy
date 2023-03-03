@@ -176,6 +176,10 @@ MonoBehaviour:
     alignWindowToBar: 1
     windowMode: 0
   _sceneHistory:
+  - name: TestNavMesh
+    path: Assets/Scenes/TestNavMesh.unity
+  - name: DefenderGame
+    path: Assets/Scenes/DefenderGame.unity
   - name: VladScene 02
     path: Assets/_VLAD/Scenes/VladScene 02.unity
   - name: VladScene 03
@@ -192,8 +196,6 @@ MonoBehaviour:
     path: Assets/Scenes/SampleScene.unity
   - name: VladScene
     path: Assets/_VLAD/VladScene.unity
-  - name: DefenderGame
-    path: Assets/Scenes/DefenderGame.unity
   - name: GameScene
     path: D:/[Udemy] Learn to make an Awesome Builder-Defender game in Unity!/2.
       Builder Defender Game/06.1 BuilderDefenderGame_PlaceBuilding/BuilderDefenderGame/Assets/Scenes/GameScene.unity

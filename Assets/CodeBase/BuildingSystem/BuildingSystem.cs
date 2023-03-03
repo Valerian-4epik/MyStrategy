@@ -1,14 +1,20 @@
 using System;
+using CodeBase.Constructions;
 using CodeBase.Data.BuildingType;
 using CodeBase.Services.Abstract;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace CodeBase.BuildingSystem {
-    public class BuildingSystem : MonoBehaviour {
+    public class BuildingSystem : MonoBehaviour
+    {
+        [SerializeField] private Building _castle;
+        
         public static BuildingSystem Instance { get; private set; }
 
         private BuildingTypeSo _buildingType;
+
+        public Building Castel => _castle;
 
         public event Action<BuildingTypeSo> OnActivateBuildingTypeChanged;
 

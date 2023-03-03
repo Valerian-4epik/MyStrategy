@@ -9,6 +9,11 @@ namespace CodeBase.BuildingSystem.HealthSystem
 
         private HealthSystem _healthSystem;
 
+        public static bool operator +(HealthBar bar1, HealthBar bar2)
+        {
+            return bar1 != bar2;
+        }
+        
         private void Awake()
         {
             _healthSystem = GetComponentInParent<HealthSystem>();
