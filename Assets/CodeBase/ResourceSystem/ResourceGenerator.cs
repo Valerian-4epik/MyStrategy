@@ -3,9 +3,12 @@ using CodeBase.BuildingSystem;
 using CodeBase.ResourceSystem.Abstract;
 using UnityEngine;
 
-namespace CodeBase.ResourceSystem {
-    public class ResourceGenerator : MonoBehaviour {
-        public static int GetNearbyResourceAmount(ResourceGeneratorData resourceGeneratorData, Vector3 position) {
+namespace CodeBase.ResourceSystem
+{
+    public class ResourceGenerator : MonoBehaviour
+    {
+        public static int GetNearbyResourceAmount(ResourceGeneratorData resourceGeneratorData, Vector3 position)
+        {
             Collider2D[] colliders =
                 Physics2D.OverlapCircleAll(position, resourceGeneratorData.ResourceDetectionRadius);
             int nearbyResourceAmount = colliders.Select(collider => collider.GetComponent<ResourceNode>())
@@ -21,27 +24,30 @@ namespace CodeBase.ResourceSystem {
 
         public ResourceGeneratorData ResourceGeneratorData => _resourceGeneratorData;
 
-        private void Awake() {
+        private void Awake()
+        {
             _resourceGeneratorData = GetComponent<BuildingTypeHolder>().BuildingType.ResourceGeneratorData;
             _timerMax = _resourceGeneratorData.TimerMax;
         }
 
-        private void Start() {
+        private void Start()
+        {
             int nearbyResourceAmount = GetNearbyResourceAmount(_resourceGeneratorData, transform.position);
-            
-            if (nearbyResourceAmount == 0) {
+
+            if (nearbyResourceAmount == 0)
+            {
                 enabled = false;
             }
-            else {
+            else
+            {
                 _timerMax = (_resourceGeneratorData.TimerMax / 2f) + _resourceGeneratorData.TimerMax *
                     (1 - (float)nearbyResourceAmount / _resourceGeneratorData.MaxResourceAmount);
             }
-
-            print("nearbyResourceAmount" + nearbyResourceAmount + ";" + _timerMax);
         }
 
 
-        private void Update() {
+        private void Update()
+        {
             _timer -= Time.deltaTime;
 
             if (!(_timer <= 0f)) return;

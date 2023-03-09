@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _movementSpeed: 2
+  _damage: 10
