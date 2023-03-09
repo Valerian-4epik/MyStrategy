@@ -6,8 +6,10 @@ using CodeBase.UI.BuildingUI;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace CodeBase.BuildingSystem {
-    public class BuildingGhost : MonoBehaviour {
+namespace CodeBase.BuildingSystem
+{
+    public class BuildingGhost : MonoBehaviour
+    {
         [SerializeField] private GameObject _spriteObject;
         [SerializeField] private BuildingSystem _buildingSystem;
         [SerializeField] private Color32 _acceptColor;
@@ -17,8 +19,9 @@ namespace CodeBase.BuildingSystem {
         private BuildingTypeSo _buildingType;
         private SpriteRenderer _spriteRenderer;
         private ResourceNearbyOverlay _resourceNearbyOverlay;
-        
-        private void Awake() {
+
+        private void Awake()
+        {
             _resourceNearbyOverlay = GetComponentInChildren<ResourceNearbyOverlay>();
             Utils.SetupCamera(); //перенести в loadlevelState.
             Hide();
@@ -26,39 +29,56 @@ namespace CodeBase.BuildingSystem {
             _spriteRenderer = _spriteObject.GetComponent<SpriteRenderer>();
         }
 
-        private void Start() {
-            BuildingSystem.Instance.OnActivateBuildingTypeChanged += BuildingSystem_OnActiveBuildingType;
+        private void Start()
+        {
+            BuildingSystem.Instance.OnActivateBuildingTypeChanged += OnActiveBuildingType;
         }
 
-        private void LateUpdate() {
-            if (_isSearchBuildingState) {
-                if (_buildingSystem.CanSpawnBuilding(_buildingType, Utils.GetMouseWorldPosition())) {
+        private void LateUpdate()
+        {
+            if (_isSearchBuildingState)
+            {
+                if (_buildingSystem.CanSpawnBuilding(_buildingType, Utils.GetMouseWorldPosition()))
+                {
                     _spriteRenderer.color = _acceptColor;
                 }
-                else {
+                else
+                {
                     _spriteRenderer.color = _refuseColor;
                 }
             }
         }
 
-        private void Update() {
+        private void Update()
+        {
             transform.position = Utils.GetMouseWorldPosition();
         }
 
-        private void BuildingSystem_OnActiveBuildingType(BuildingTypeSo buildingType) {
+        private void OnActiveBuildingType(BuildingTypeSo buildingType)
+        {
             _buildingType = buildingType;
             var type = BuildingSystem.Instance.GetActiveBuildingType();
             Show(type.Sprite);
-            _resourceNearbyOverlay.Show(type.ResourceGeneratorData);
-            _isSearchBuildingState = true;
+
+            if (type.HasResourceGeneratorData)
+            {
+                _resourceNearbyOverlay.Show(type.ResourceGeneratorData);
+                _isSearchBuildingState = true;
+            }
+            else
+            {
+                _resourceNearbyOverlay.Hide();
+            }
         }
-        
-        private void Show(Sprite sprite) {
+
+        private void Show(Sprite sprite)
+        {
             _spriteObject.SetActive(true);
             _spriteObject.GetComponent<SpriteRenderer>().sprite = sprite;
         }
 
-        private void Hide() {
+        private void Hide()
+        {
             _spriteObject.SetActive(false);
         }
     }

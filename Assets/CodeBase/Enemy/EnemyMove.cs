@@ -23,12 +23,12 @@ namespace CodeBase.Enemy
         {
             _movementSpeed = _enemy.EnemyInfo.MovementSpeed;
             _agent.speed = _movementSpeed;
-            _enemy.TargetChanged += SetTarget;
+            _enemy.TargetChanged += OnSetupTarget;
         }
 
         private void OnDisable()
         {
-            _enemy.TargetChanged -= SetTarget;
+            _enemy.TargetChanged -= OnSetupTarget;
         }
 
         private void Update()
@@ -41,7 +41,7 @@ namespace CodeBase.Enemy
                 transform.position.z));
         }
 
-        private void SetTarget(Transform targetTransform)
+        private void OnSetupTarget(Transform targetTransform)
         {
             _targetTransform = targetTransform;
             _canMove = true;

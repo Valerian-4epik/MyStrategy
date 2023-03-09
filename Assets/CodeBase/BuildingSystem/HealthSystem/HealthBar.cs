@@ -21,12 +21,12 @@ namespace CodeBase.BuildingSystem.HealthSystem
 
         private void Start()
         {
-            _healthSystem.HealthChanged += UpdateBar;
-            UpdateBar();
+            _healthSystem.HealthChanged += OnUpdateBar;
+            OnUpdateBar();
             UpdateHealthBarVisible();
         }
 
-        private void UpdateBar()
+        private void OnUpdateBar()
         {
             _bar.localScale = new Vector3(_healthSystem.GetHealthAmountNormalized(), 1, 1);
             UpdateHealthBarVisible();

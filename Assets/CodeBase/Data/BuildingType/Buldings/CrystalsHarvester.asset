@@ -17,6 +17,7 @@ MonoBehaviour:
   _transform: {fileID: 3539544213206302977, guid: 6a0b31d601979de49a94bbf81ff900af,
     type: 3}
   _prefab: {fileID: 5760581732284533489, guid: 6a0b31d601979de49a94bbf81ff900af, type: 3}
+  _hasResourceGeneratorData: 1
   _resourceGeneratorData:
     TimerMax: 2
     ResourceTypeSo: {fileID: 11400000, guid: 6adc3555f18d53947a643c99cb833ded, type: 2}
@@ -28,3 +29,4 @@ MonoBehaviour:
     _amount: 50
   - _resourceTypeSo: {fileID: 11400000, guid: b161b0e9e1c3c53439a8413f365bd739, type: 2}
     _amount: 50
+  _healthAmount: 0
