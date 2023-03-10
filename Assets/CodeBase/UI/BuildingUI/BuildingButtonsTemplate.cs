@@ -1,7 +1,7 @@
 using CodeBase.Data.BuildingType;
 using UnityEngine;
 
-namespace CodeBase.UI {
+namespace CodeBase.UI.BuildingUI {
     public class BuildingButtonsTemplate : MonoBehaviour {
         [SerializeField] private BuildingSystem.BuildingSystem _buildingSystem;
 

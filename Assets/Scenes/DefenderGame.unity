@@ -421,6 +421,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Castel
       objectReference: {fileID: 0}
+    - target: {fileID: 8459242648148798811, guid: 70d2329b9be1fdf4ea594f69e9dd1b2d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6580964078252186627, guid: 70d2329b9be1fdf4ea594f69e9dd1b2d, type: 3}
     - {fileID: -8795144749533837158, guid: 70d2329b9be1fdf4ea594f69e9dd1b2d, type: 3}

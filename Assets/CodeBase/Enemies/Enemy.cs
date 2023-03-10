@@ -3,7 +3,7 @@ using CodeBase.Constructions;
 using CodeBase.Data.EnemyStatsInformation;
 using UnityEngine;
 
-namespace CodeBase.Enemy
+namespace CodeBase.Enemies
 {
     public class Enemy : MonoBehaviour
     {

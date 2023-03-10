@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace CodeBase.Enemy
+namespace CodeBase.Enemies
 {
     [RequireComponent(typeof(Enemy))]
     public class EnemyHealth : MonoBehaviour

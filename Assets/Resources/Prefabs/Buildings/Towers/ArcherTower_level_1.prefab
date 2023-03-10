@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 5352285296218688831}
   - component: {fileID: 2248488404120673979}
   - component: {fileID: -6477764984767378954}
+  - component: {fileID: -474918932833508481}
   m_Layer: 0
   m_Name: ArcherTower_level_1
   m_TagString: Untagged
@@ -134,6 +135,7 @@ Transform:
   - {fileID: 6386037751138218795}
   - {fileID: 2781407337033245988}
   - {fileID: 5650065541985791665}
+  - {fileID: 6355165722309183885}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -216,6 +218,65 @@ MonoBehaviour:
   area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 0, y: 0, z: 0}
+--- !u!114 &-474918932833508481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2738902865949902291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84029cfb1d0cedf4fb8f360c78c1d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerInformation: {fileID: 11400000, guid: 4791821df7ded064989a05ed92e5a4bc, type: 2}
+  _projectile: {fileID: 4649689562850754794, guid: feba941437f6cc64ca8d9affa9a3e349,
+    type: 3}
+--- !u!1 &7592672196874272854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6355165722309183885}
+  - component: {fileID: 2533428100219017673}
+  m_Layer: 0
+  m_Name: projectileSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6355165722309183885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592672196874272854}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3861532344286605574}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2533428100219017673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592672196874272854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f21f8cd8eceb74d85d8435742876c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2687722983176943981
 PrefabInstance:
   m_ObjectHideFlags: 0

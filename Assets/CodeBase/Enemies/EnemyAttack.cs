@@ -1,7 +1,7 @@
 using CodeBase.BuildingSystem.HealthSystem;
 using UnityEngine;
 
-namespace CodeBase.Enemy
+namespace CodeBase.Enemies
 {
     public class EnemyAttack : MonoBehaviour
     {

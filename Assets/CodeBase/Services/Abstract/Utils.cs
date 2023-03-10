@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace CodeBase.Services.Abstract {
@@ -12,6 +13,13 @@ namespace CodeBase.Services.Abstract {
             Vector3 mouseWorldPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPosition.z = 0f;
             return mouseWorldPosition;
+        }
+
+        public static float GetAngleFromVector(Vector3 vector)
+        {
+            float radians = Mathf.Atan2(vector.y, vector.x);
+            float degrees = radians * Mathf.Rad2Deg;
+            return degrees;
         }
     }
 }

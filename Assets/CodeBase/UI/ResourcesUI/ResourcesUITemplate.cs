@@ -3,7 +3,7 @@ using System.Linq;
 using CodeBase.Data.ResourceType;
 using UnityEngine;
 
-namespace CodeBase.UI {
+namespace CodeBase.UI.ResourcesUI {
     public class ResourcesUITemplate : MonoBehaviour {
         [SerializeField] private List<ResourceUISlot> _slots;
 

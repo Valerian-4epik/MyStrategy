@@ -1,10 +1,9 @@
-using System;
 using CodeBase.ResourceSystem;
 using CodeBase.ResourceSystem.Abstract;
 using TMPro;
 using UnityEngine;
 
-namespace CodeBase.UI.ResourcesUI {
+namespace CodeBase.UI.BuildingUI {
     public class ResourceGeneratorOverlay : MonoBehaviour {
         [SerializeField] private SpriteRenderer _icon;
         [SerializeField] private GameObject _bar;

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CodeBase.Enemies;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,7 +10,7 @@ namespace CodeBase.Factory.EnemyFactory
     public class EnemySpawner : MonoBehaviour
     {
         [SerializeField] private List<Transform> _spawnPoint;
-        [SerializeField] private Enemy.Enemy _enemy;
+        [SerializeField] private Enemy _enemy;
         [SerializeField] private Transform _mainTarget;
 
         private void Start()
