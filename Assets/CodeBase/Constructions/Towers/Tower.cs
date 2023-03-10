@@ -1,6 +1,7 @@
 using System;
 using CodeBase.Data.TowerStatsInformation;
 using CodeBase.Enemies;
+using CodeBase.Enemies.EnemyBehaviors;
 using CodeBase.Projectiles;
 using UnityEngine;
 

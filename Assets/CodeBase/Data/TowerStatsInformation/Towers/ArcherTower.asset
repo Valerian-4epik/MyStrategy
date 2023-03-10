@@ -15,7 +15,7 @@ MonoBehaviour:
   _level1:
     AttackDistance: 10
     Damage: 0
-    AttackSpeed: 1
+    AttackSpeed: 0.3
     ResourceAmount:
     - _resourceTypeSo: {fileID: 0}
       _amount: 0

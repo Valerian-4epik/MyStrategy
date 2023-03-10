@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using CodeBase.Enemies;
+using CodeBase.Enemies.EnemyBehaviors;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,23 +14,23 @@ namespace CodeBase.Factory.EnemyFactory
         [SerializeField] private Enemy _enemy;
         [SerializeField] private Transform _mainTarget;
 
-        private void Start()
+        public void CreateEnemy(int value)
         {
-            StartCoroutine(CreateEnemy(5));
-        }
+            var spawnPointTransform = _spawnPoint[GetRandomIndex()];
 
-        private IEnumerator CreateEnemy(int value)
-        {
             for (int i = 0; i < value; i++)
             {
-                var enemy= Instantiate(_enemy, _spawnPoint[GetRandomTransform()].position, Quaternion.identity);
+                var enemy = Instantiate(_enemy, spawnPointTransform.position, Quaternion.identity);
                 enemy.TargetTransform = _mainTarget;
-
-                yield return new WaitForSeconds(5f);
             }
         }
 
-        private int GetRandomTransform()
+        private Transform GetRandomSpawnPoint()
+        {
+            
+        }
+        
+        private int GetRandomIndex()
         {
             return Random.Range(0, _spawnPoint.Count);
         }

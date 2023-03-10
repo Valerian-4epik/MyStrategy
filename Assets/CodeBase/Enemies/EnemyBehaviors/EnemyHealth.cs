@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CodeBase.Enemies
+namespace CodeBase.Enemies.EnemyBehaviors
 {
     [RequireComponent(typeof(Enemy))]
     public class EnemyHealth : MonoBehaviour
@@ -17,6 +17,11 @@ namespace CodeBase.Enemies
         private void Start()
         {
             _maxHealth = _enemy.EnemyInfo.Health;
+        }
+
+        public void TakeDamage()
+        {
+            Destroy(gameObject);
         }
     }
 }

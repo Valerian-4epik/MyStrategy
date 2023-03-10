@@ -1,5 +1,6 @@
 using System;
 using CodeBase.Enemies;
+using CodeBase.Enemies.EnemyBehaviors;
 using CodeBase.Services.Abstract;
 using UnityEngine;
 
@@ -7,10 +8,13 @@ namespace CodeBase.Projectiles
 {
     public class Projectile : MonoBehaviour
     {
+        private const float TimeToDie = 1f;
+
         [SerializeField] private float _moveSpeed;
 
         protected Vector3 MoveDirection;
-        
+        protected Vector3 LastDirection;
+
         private Enemy _targetEnemy;
 
         protected virtual void Update()
@@ -18,20 +22,23 @@ namespace CodeBase.Projectiles
             if (_targetEnemy != null)
             {
                 MoveDirection = (_targetEnemy.transform.position - transform.position).normalized;
-                transform.eulerAngles = new Vector3(0, 0, Utils.GetAngleFromVector(MoveDirection));
-                transform.position += MoveDirection * _moveSpeed * Time.deltaTime;
+                LastDirection = MoveDirection;
             }
             else
             {
-                Destroy(gameObject);
+                MoveDirection = LastDirection;
+                Destroy(gameObject, TimeToDie);
             }
+
+            transform.position += MoveDirection * _moveSpeed * Time.deltaTime;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out Enemy enemy))
+            if (collision.TryGetComponent(out EnemyHealth enemy))
             {
-                Destroy(enemy.gameObject);
+                enemy.TakeDamage();
+                Destroy(gameObject);
             }
         }
 

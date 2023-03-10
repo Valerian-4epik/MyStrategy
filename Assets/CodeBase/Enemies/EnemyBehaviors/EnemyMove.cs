@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace CodeBase.Enemies
+namespace CodeBase.Enemies.EnemyBehaviors
 {
     [RequireComponent(typeof(Enemy))]
     public class EnemyMove : MonoBehaviour
