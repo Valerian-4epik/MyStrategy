@@ -8,6 +8,8 @@ namespace CodeBase.Enemies
     [RequireComponent(typeof(EnemySpawner))]
     public class EnemyWaveSystem : MonoBehaviour
     {
+        private State _state;
+        private int _waveNumber;
         private float _nextWaveSpawnTimer;
         private float _nextEnemySpawnTimer;
         private int _remainingEnemySpawnAmount;
@@ -21,19 +23,25 @@ namespace CodeBase.Enemies
 
         private void Start()
         {
+            _state = State.WaitingToSpawnNextWave;
             _nextWaveSpawnTimer = 5f;
         }
 
         private void Update()
         {
-            _nextWaveSpawnTimer -= Time.deltaTime;
-
-            if (_nextWaveSpawnTimer < 0)
+            switch (_state)
             {
-                SpawnWave();
+                case State.WaitingToSpawnNextWave:
+                    StartSpawnWaveTimer();
+                    break;
+                case State.SpawningWave:
+                    StartSpawnEnemyTimer();
+                    break;
             }
+        }
 
-
+        private void StartSpawnEnemyTimer()
+        {
             if (_remainingEnemySpawnAmount > 0)
             {
                 _nextEnemySpawnTimer -= Time.deltaTime;
@@ -44,6 +52,21 @@ namespace CodeBase.Enemies
                     _enemySpawner.CreateEnemy(_currentSpawnPointTransform);
                     _remainingEnemySpawnAmount--;
                 }
+
+                if (_remainingEnemySpawnAmount <= 0)
+                {
+                    _state = State.WaitingToSpawnNextWave;
+                }
+            }
+        }
+
+        private void StartSpawnWaveTimer()
+        {
+            _nextWaveSpawnTimer -= Time.deltaTime;
+
+            if (_nextWaveSpawnTimer < 0)
+            {
+                SpawnWave();
             }
         }
 
@@ -51,7 +74,15 @@ namespace CodeBase.Enemies
         {
             _currentSpawnPointTransform = _enemySpawner.GetRandomSpawnPoint();
             _nextWaveSpawnTimer = 10f;
-            _remainingEnemySpawnAmount = 10;
+            _remainingEnemySpawnAmount = 5 + 3 * _waveNumber;//это типа прогрессия
+            _state = State.SpawningWave;
+            _waveNumber++;
         }
+    }
+
+    public enum State
+    {
+        WaitingToSpawnNextWave,
+        SpawningWave,
     }
 }
