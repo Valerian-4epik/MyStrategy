@@ -17,7 +17,7 @@ namespace CodeBase.Enemies.EnemyBehaviors
             if (collision.gameObject.TryGetComponent(out HealthSystem building))
             {
                 building.TakeDamage(_enemy.EnemyInfo.Damage);
-                _enemy.Died?.Invoke(_enemy);
+                _enemy.Die();
                 Destroy(gameObject);
             }
         }

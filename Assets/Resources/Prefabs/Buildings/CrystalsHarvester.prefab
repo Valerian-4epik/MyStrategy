@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthAmountMax: 100
+  _building: {fileID: -3043763727217079682}
 --- !u!114 &-3043763727217079682
 MonoBehaviour:
   m_ObjectHideFlags: 0

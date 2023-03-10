@@ -21,7 +21,7 @@ namespace CodeBase.Enemies.EnemyBehaviors
 
         public void TakeDamage()
         {
-            _enemy.Died?.Invoke(_enemy);
+            _enemy.Die();
             print("Сдох проверяй");
             Destroy(gameObject);
         }

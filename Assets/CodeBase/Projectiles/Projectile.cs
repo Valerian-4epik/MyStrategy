@@ -40,7 +40,6 @@ namespace CodeBase.Projectiles
             if (collision.TryGetComponent(out EnemyHealth enemy))
             {
                 enemy.TakeDamage();
-                _targetEnemy.Died -= OnEnemyDied;
                 Destroy(gameObject);
             }
         }
@@ -55,6 +54,7 @@ namespace CodeBase.Projectiles
         private void OnEnemyDied(Enemy enemy)
         {
             _hasTarget = false;
+            _targetEnemy = null;
         }
     }
 }

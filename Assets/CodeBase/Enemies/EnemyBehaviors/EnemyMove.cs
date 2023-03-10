@@ -1,3 +1,5 @@
+using CodeBase.BuildingSystem.HealthSystem;
+using CodeBase.Constructions;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,7 +8,7 @@ namespace CodeBase.Enemies.EnemyBehaviors
     [RequireComponent(typeof(Enemy))]
     public class EnemyMove : MonoBehaviour
     {
-        private Transform _targetTransform;
+        private HealthSystem _target;
         private Enemy _enemy;
         private float _movementSpeed;
         private NavMeshAgent _agent;
@@ -32,18 +34,31 @@ namespace CodeBase.Enemies.EnemyBehaviors
 
         private void Update()
         {
-            if (!_canMove)
+            TryMove();
+        }
+
+        private void TryMove()
+        {
+            if (_canMove == false)
                 return;
-            
-            var position = _targetTransform.position;
+
+            Vector3 position = _target.transform.position;
+
             _agent.SetDestination(new Vector3(position.x, position.y,
                 transform.position.z));
         }
 
-        private void OnSetupTarget(Transform targetTransform)
+        private void OnSetupTarget(HealthSystem targetTransform)
         {
-            _targetTransform = targetTransform;
+            _target = targetTransform;
+            _target.Destroed += OnTargetDied;
+            
             _canMove = true;
+        }
+
+        private void OnTargetDied(HealthSystem building)
+        {
+            _canMove = false;
         }
     }
 }

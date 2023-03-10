@@ -1,9 +1,6 @@
-using System;
 using CodeBase.Data.BuildingType;
-using CodeBase.ResourceSystem.Abstract;
 using CodeBase.Services.Abstract;
 using CodeBase.UI.BuildingUI;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CodeBase.BuildingSystem
@@ -36,17 +33,12 @@ namespace CodeBase.BuildingSystem
 
         private void LateUpdate()
         {
-            if (_isSearchBuildingState)
-            {
-                if (_buildingSystem.CanSpawnBuilding(_buildingType, Utils.GetMouseWorldPosition()))
-                {
-                    _spriteRenderer.color = _acceptColor;
-                }
-                else
-                {
-                    _spriteRenderer.color = _refuseColor;
-                }
-            }
+            if (!_isSearchBuildingState)
+                return;
+
+            _spriteRenderer.color = _buildingSystem.CanSpawnBuilding(_buildingType, Utils.GetMouseWorldPosition()) 
+                ? _acceptColor 
+                : _refuseColor;
         }
 
         private void Update()

@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CodeBase.BuildingSystem.HealthSystem;
+using CodeBase.Constructions;
 using CodeBase.Enemies;
 using CodeBase.Enemies.EnemyBehaviors;
 using UnityEngine;
@@ -12,12 +14,12 @@ namespace CodeBase.Factory.EnemyFactory
     {
         [SerializeField] private List<Transform> _spawnPoint;
         [SerializeField] private Enemy _enemy;
-        [SerializeField] private Transform _mainTarget;
+        [SerializeField] private HealthSystem _mainTarget;
 
         public void CreateEnemy(Transform transform)
         {
             var enemy = Instantiate(_enemy, transform.position, Quaternion.identity);
-            enemy.TargetTransform = _mainTarget;
+            enemy.Target = _mainTarget;
         }
 
         public Transform GetRandomSpawnPoint() =>

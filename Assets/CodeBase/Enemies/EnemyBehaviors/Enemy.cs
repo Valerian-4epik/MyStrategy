@@ -1,4 +1,5 @@
 using System;
+using CodeBase.BuildingSystem.HealthSystem;
 using CodeBase.Constructions;
 using CodeBase.Data.EnemyStatsInformation;
 using UnityEngine;
@@ -19,25 +20,32 @@ namespace CodeBase.Enemies.EnemyBehaviors
         [SerializeField] private EnemyInformation _enemyInfo;
 
         private Rigidbody2D _rigidbody2D;
-        private Transform _targetTransform;
+        private HealthSystem _target;
         private float _lookForTargetTimer;
         private float _lookForTargetTimerMax = 1f;
+        private bool _hasTarget;
 
-        public Action<Enemy> Died;
+        public event Action<Enemy> Died;
+        public event Action<HealthSystem> TargetChanged;
 
         public EnemyInformation EnemyInfo => _enemyInfo;
 
-        public Transform TargetTransform
+        public HealthSystem Target
         {
-            get => _targetTransform;
+            get => _target;
             set
             {
-                _targetTransform = value;
-                TargetChanged?.Invoke(_targetTransform);
+                _target = value;
+                _hasTarget = true;
+                TargetChanged?.Invoke(_target);
             }
         }
 
-        public event Action<Transform> TargetChanged;
+        public void Die()
+        {
+            print("умер");
+            Died?.Invoke(this);
+        }
 
         private void Start()
         {
@@ -65,31 +73,44 @@ namespace CodeBase.Enemies.EnemyBehaviors
             float targetMaxRadius = 10f;
             Collider2D[] colliderArray = Physics2D.OverlapCircleAll(transform.position, targetMaxRadius);
 
-            foreach (var collider in colliderArray)
+            foreach (Collider2D buildingCollider in colliderArray)
             {
-                Building building = collider.GetComponent<Building>();
+                if (buildingCollider.TryGetComponent(out HealthSystem building) == false)
+                    continue;
 
-                if (building != null)
+                if (_hasTarget == false)
                 {
-                    if (_targetTransform == null)
+                    SetTarget(building);
+                    _hasTarget = true;
+                }
+                else
+                {
+                    Vector3 position = transform.position;
+                    float distanceToNewBuilding = Vector3.Distance(position, building.transform.position);
+                    float distanceToCurrentTarget = Vector3.Distance(position, _target.transform.position);
+
+                    if (distanceToNewBuilding < distanceToCurrentTarget)
                     {
-                        TargetTransform = building.transform;
-                    }
-                    else
-                    {
-                        if (Vector3.Distance(transform.position, building.transform.position)
-                            < Vector3.Distance(transform.position, _targetTransform.position))
-                        {
-                            TargetTransform = building.transform;
-                        }
+                        SetTarget(building);
                     }
                 }
             }
 
-            if (_targetTransform == null)
+            if (_hasTarget == false)
             {
-                TargetTransform = BuildingSystem.BuildingSystem.Instance.Castel.transform;
+                SetTarget(BuildingSystem.BuildingSystem.Instance.Castel.GetComponent<HealthSystem>());
             }
+        }
+
+        private void SetTarget(HealthSystem building)
+        {
+            Target = building;
+            building.Destroed += OnBuildingDestroed;
+        }
+
+        private void OnBuildingDestroed(HealthSystem building)
+        {
+            SetTarget(BuildingSystem.BuildingSystem.Instance.Castel.GetComponent<HealthSystem>());
         }
     }
 }
