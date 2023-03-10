@@ -14,22 +14,15 @@ namespace CodeBase.Factory.EnemyFactory
         [SerializeField] private Enemy _enemy;
         [SerializeField] private Transform _mainTarget;
 
-        public void CreateEnemy(int value)
+        public void CreateEnemy(Transform transform)
         {
-            var spawnPointTransform = _spawnPoint[GetRandomIndex()];
-
-            for (int i = 0; i < value; i++)
-            {
-                var enemy = Instantiate(_enemy, spawnPointTransform.position, Quaternion.identity);
-                enemy.TargetTransform = _mainTarget;
-            }
+            var enemy = Instantiate(_enemy, transform.position, Quaternion.identity);
+            enemy.TargetTransform = _mainTarget;
         }
 
-        private Transform GetRandomSpawnPoint()
-        {
-            
-        }
-        
+        public Transform GetRandomSpawnPoint() =>
+            _spawnPoint[GetRandomIndex()];
+
         private int GetRandomIndex()
         {
             return Random.Range(0, _spawnPoint.Count);

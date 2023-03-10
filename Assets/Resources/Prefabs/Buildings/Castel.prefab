@@ -832,6 +832,8 @@ GameObject:
   - component: {fileID: 7128900106900466496}
   - component: {fileID: 8262456615901381239}
   - component: {fileID: 6251737564620217286}
+  - component: {fileID: 1055885163}
+  - component: {fileID: 1055885164}
   m_Layer: 0
   m_Name: HealthSystem
   m_TagString: Untagged
@@ -909,6 +911,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.36, y: 2.29}
   m_EdgeRadius: 0
+--- !u!114 &1055885163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8286478114807358159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b396d5da20a74ba7a26f1b521f216289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1055885164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8286478114807358159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ecdf38a3bd13a41bd5e49b67cdf73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buildingType: {fileID: 11400000, guid: cdfe324d256f99c4e8bca47ab5c3b8ff, type: 2}
 --- !u!1 &8459242648148798811
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,8 +945,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3748678606905272286}
-  - component: {fileID: 6580964078252186627}
-  - component: {fileID: -8795144749533837158}
   m_Layer: 0
   m_Name: Castel
   m_TagString: Untagged
@@ -945,31 +970,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6580964078252186627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8459242648148798811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b396d5da20a74ba7a26f1b521f216289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-8795144749533837158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8459242648148798811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4ecdf38a3bd13a41bd5e49b67cdf73a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _buildingType: {fileID: 11400000, guid: cdfe324d256f99c4e8bca47ab5c3b8ff, type: 2}
 --- !u!1 &9161798191194625461
 GameObject:
   m_ObjectHideFlags: 0

@@ -597,6 +597,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3825126254851983194, guid: 2cea3e3fe3b751942a4586da63cf903a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cea3e3fe3b751942a4586da63cf903a, type: 3}
 --- !u!4 &1333268042 stripped
@@ -670,7 +675,7 @@ PrefabInstance:
     - target: {fileID: 5752037281990211234, guid: ff0c8b1b18527be47981a73fa4b34050,
         type: 3}
       propertyPath: m_Name
-      value: EnemySpawn
+      value: EnemySpawner
       objectReference: {fileID: 0}
     - target: {fileID: 5752037281990211235, guid: ff0c8b1b18527be47981a73fa4b34050,
         type: 3}

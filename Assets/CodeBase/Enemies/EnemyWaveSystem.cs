@@ -12,6 +12,7 @@ namespace CodeBase.Enemies
         private float _nextEnemySpawnTimer;
         private int _remainingEnemySpawnAmount;
         private EnemySpawner _enemySpawner;
+        private Transform _currentSpawnPointTransform;
 
         private void Awake()
         {
@@ -20,7 +21,7 @@ namespace CodeBase.Enemies
 
         private void Start()
         {
-            
+            _nextWaveSpawnTimer = 5f;
         }
 
         private void Update()
@@ -29,6 +30,7 @@ namespace CodeBase.Enemies
 
             if (_nextWaveSpawnTimer < 0)
             {
+                SpawnWave();
             }
 
 
@@ -39,9 +41,17 @@ namespace CodeBase.Enemies
                 if (_nextEnemySpawnTimer < 0)
                 {
                     _nextEnemySpawnTimer = Random.Range(0f, 0.2f);
-                    _enemySpawner.CreateEnemy();
+                    _enemySpawner.CreateEnemy(_currentSpawnPointTransform);
+                    _remainingEnemySpawnAmount--;
                 }
             }
+        }
+
+        private void SpawnWave()
+        {
+            _currentSpawnPointTransform = _enemySpawner.GetRandomSpawnPoint();
+            _nextWaveSpawnTimer = 10f;
+            _remainingEnemySpawnAmount = 10;
         }
     }
 }
