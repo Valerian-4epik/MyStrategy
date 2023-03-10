@@ -23,6 +23,8 @@ namespace CodeBase.Enemies.EnemyBehaviors
         private float _lookForTargetTimer;
         private float _lookForTargetTimerMax = 1f;
 
+        public Action<Enemy> Died;
+
         public EnemyInformation EnemyInfo => _enemyInfo;
 
         public Transform TargetTransform
@@ -79,7 +81,7 @@ namespace CodeBase.Enemies.EnemyBehaviors
                             < Vector3.Distance(transform.position, _targetTransform.position))
                         {
                             TargetTransform = building.transform;
-                        };
+                        }
                     }
                 }
             }
