@@ -15,11 +15,13 @@ namespace CodeBase.Projectiles
         protected Vector3 MoveDirection;
         protected Vector3 LastDirection;
 
+        private bool _hasTarget;
+
         private Enemy _targetEnemy;
 
-        protected virtual void Update()
+        protected void Move()
         {
-            if (_targetEnemy != null)
+            if (_hasTarget)
             {
                 MoveDirection = (_targetEnemy.transform.position - transform.position).normalized;
                 LastDirection = MoveDirection;
@@ -38,6 +40,7 @@ namespace CodeBase.Projectiles
             if (collision.TryGetComponent(out EnemyHealth enemy))
             {
                 enemy.TakeDamage();
+                _targetEnemy.Died -= OnEnemyDied;
                 Destroy(gameObject);
             }
         }
@@ -45,6 +48,13 @@ namespace CodeBase.Projectiles
         public void SetTarget(Enemy enemy)
         {
             _targetEnemy = enemy;
+            _hasTarget = true;
+            _targetEnemy.Died += OnEnemyDied;
+        }
+
+        private void OnEnemyDied(Enemy enemy)
+        {
+            _hasTarget = false;
         }
     }
 }

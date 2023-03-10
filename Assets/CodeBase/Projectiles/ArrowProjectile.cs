@@ -7,9 +7,9 @@ namespace CodeBase.Projectiles
 {
     public class ArrowProjectile : Projectile
     {
-        protected override void Update()
+        private void Update()
         {
-            base.Update();
+            Move();
             transform.eulerAngles = new Vector3(0, 0, Utils.GetAngleFromVector(MoveDirection));
         }
     }
