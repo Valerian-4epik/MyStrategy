@@ -1,9 +1,7 @@
 using System;
-using CodeBase.Constructions;
-using CodeBase.Enemies.EnemyBehaviors;
 using UnityEngine;
 
-namespace CodeBase.BuildingSystem.HealthSystem {
+namespace CodeBase.BuildingSystems.HealthSystem {
     public class HealthSystem : MonoBehaviour {
         [SerializeField] private int _healthAmountMax;
 

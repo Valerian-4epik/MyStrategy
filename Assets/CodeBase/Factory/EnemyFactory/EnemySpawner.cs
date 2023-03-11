@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using CodeBase.BuildingSystem.HealthSystem;
+using CodeBase.BuildingSystems.HealthSystem;
 using CodeBase.Constructions;
 using CodeBase.Enemies;
 using CodeBase.Enemies.EnemyBehaviors;

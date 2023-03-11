@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 25
+  controlID: 17
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 26
+  controlID: 18
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -694,7 +694,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -504442
+  m_LastSelectedObjectID: 315710
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -730,7 +730,7 @@ MonoBehaviour:
     m_CachedPref: -203
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -504442
+  m_LastInspectedObjectInstanceID: 315710
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
@@ -761,7 +761,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 140
+  controlID: 74
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -821,23 +821,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: f8930000
       m_LastClickedID: 0
-      m_ExpandedIDs: 46c1f6ffb2c9f6ffd04cf8ff2a4df8fffe5ff8ffa063f8ff2c99f8ff3499f8ff3699f8ffee9cf8ff44a6f8ff98b5f8ff40b6f8ff56b6f8ff0eb8f8ff14b8f8ff9cb8f8ff32b9f8ffe0bff9ffe2bff9fff6bff9ff5ccbf9ff94cbf9ff02ccf9ff20ccf9ff36ccf9ff94dbf9ffd4e9f9ff9c1efeff643afeff9a71feffd8ccfeff28d7feffaedcfeffa2e2fefffce7feff76edfeffd0f2feff34f8feff7453ffff5a76ffffce77ffffc0f9fffff8faffff90dc00001ea6010036a60100
+      m_ExpandedIDs: f8e5fffff8faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Soldier_level_1
-        m_OriginalName: Soldier_level_1
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 268262
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 13}
       m_SearchString: 
@@ -933,7 +933,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_SearchFilter:
-    m_NameFilter: sold
+    m_NameFilter: 
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -945,33 +945,33 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Prefabs/Buildings/Soldiers
+    - Assets/Scenes
     m_Globs: []
-    m_OriginalText: sold
+    m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/Prefabs/Buildings/Soldiers
+  - Assets/Scenes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\UnityGames\MyStrategy
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 340.6}
-    m_SelectedIDs: d0430300
-    m_LastClickedID: 213968
-    m_ExpandedIDs: 00000000d4740000d6740000d8740000da740000dc740000de740000e0740000e2740000e4740000e6740000e8740000ea740000ec740000ee740000f0740000f2740000f4740000f6740000f8740000fa740000fc740000fe740000007500000275000004750000067500000a7500000c75000004770000067700000a7700001a77000076dc00009af80000aaf80000f6f800005cb001009ece010008e80200
+    scrollPos: {x: 0, y: 72.600006}
+    m_SelectedIDs: d8930000
+    m_LastClickedID: 37848
+    m_ExpandedIDs: 0000000016930000189300001a9300001c9300001e93000020930000229300002493000026930000289300002a9300002c9300002e93000030930000329300003493000036930000389300003a9300003c9300003e93000040930000429300004493000046930000489300004a9300004e930000509300005493000056930000589300005a9300005c93000060930000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Soldiers
-      m_OriginalName: Soldiers
+      m_Name: Source
+      m_OriginalName: Source
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 213064
+      m_UserData: 37850
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -988,7 +988,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d4740000d6740000d8740000da740000dc740000de740000e0740000e2740000e4740000e6740000e8740000ea740000ec740000ee740000f0740000f2740000f4740000f6740000f8740000fa740000fc740000fe74000000750000027500000475000006750000087500000a7500000c750000
+    m_ExpandedIDs: 0000000016930000189300001a9300001c9300001e93000020930000229300002493000026930000289300002a9300002c9300002e93000030930000329300003493000036930000389300003a9300003c9300003e93000040930000429300004493000046930000489300004a9300004c9300004e93000050930000529300005493000056930000589300005a9300005c9300005e93000060930000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1013,24 +1013,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: f8930000
+    m_LastClickedInstanceID: 37880
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000507f0300fc13010092630000e6fc000070450100c69a0000ea2c01001c000100666600008229010026740000581b010058ff00000e640000f076010020e700001ae700003ae70000ec270100b620030056b0010000000000c4f6000080440300
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Soldier_level_1
-      m_OriginalName: Soldier_level_1
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 213118
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 16}
     m_CreateAssetUtility:

@@ -51,7 +51,7 @@ namespace CodeBase.Projectiles
             _targetEnemy.Died += OnEnemyDied;
         }
 
-        private void OnEnemyDied(Enemy enemy)
+        private void OnEnemyDied()
         {
             _hasTarget = false;
             _targetEnemy = null;

@@ -1,5 +1,4 @@
 using System;
-using CodeBase.BuildingSystem.HealthSystem;
 using UnityEngine;
 
 namespace CodeBase.Constructions

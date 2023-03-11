@@ -3,12 +3,12 @@ using CodeBase.Services.Abstract;
 using CodeBase.UI.BuildingUI;
 using UnityEngine;
 
-namespace CodeBase.BuildingSystem
+namespace CodeBase.BuildingSystems
 {
     public class BuildingGhost : MonoBehaviour
     {
         [SerializeField] private GameObject _spriteObject;
-        [SerializeField] private BuildingSystem _buildingSystem;
+        [SerializeField] private BuildingSystems.BuildingSystem _buildingSystem;
         [SerializeField] private Color32 _acceptColor;
         [SerializeField] private Color32 _refuseColor;
 
@@ -28,7 +28,7 @@ namespace CodeBase.BuildingSystem
 
         private void Start()
         {
-            BuildingSystem.Instance.OnActivateBuildingTypeChanged += OnActiveBuildingType;
+            BuildingSystems.BuildingSystem.Instance.OnActivateBuildingTypeChanged += OnActiveBuildingType;
         }
 
         private void LateUpdate()
@@ -49,7 +49,7 @@ namespace CodeBase.BuildingSystem
         private void OnActiveBuildingType(BuildingTypeSo buildingType)
         {
             _buildingType = buildingType;
-            var type = BuildingSystem.Instance.GetActiveBuildingType();
+            var type = BuildingSystems.BuildingSystem.Instance.GetActiveBuildingType();
             Show(type.Sprite);
 
             if (type.HasResourceGeneratorData)

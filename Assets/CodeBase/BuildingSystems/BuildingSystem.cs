@@ -5,7 +5,7 @@ using CodeBase.Services.Abstract;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace CodeBase.BuildingSystem
+namespace CodeBase.BuildingSystems
 {
     public class BuildingSystem : MonoBehaviour
     {

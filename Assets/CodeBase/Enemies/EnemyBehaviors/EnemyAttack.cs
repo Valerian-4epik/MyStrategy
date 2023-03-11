@@ -1,4 +1,4 @@
-using CodeBase.BuildingSystem.HealthSystem;
+using CodeBase.BuildingSystems.HealthSystem;
 using UnityEngine;
 
 namespace CodeBase.Enemies.EnemyBehaviors

@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
-namespace CodeBase.BuildingSystem.HealthSystem
+namespace CodeBase.BuildingSystems.HealthSystem
 {
     public class HealthBar : MonoBehaviour
     {

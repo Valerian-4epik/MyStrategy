@@ -106,7 +106,7 @@ namespace CodeBase.Constructions.Towers
             projectile.SetTarget(_target);
         }
 
-        private void OnTargetDied(Enemy enemy)
+        private void OnTargetDied()
         {
             _target = null;
             _hasTarget = false;

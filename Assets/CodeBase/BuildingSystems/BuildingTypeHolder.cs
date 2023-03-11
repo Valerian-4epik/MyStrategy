@@ -1,7 +1,7 @@
 using CodeBase.Data.BuildingType;
 using UnityEngine;
 
-namespace CodeBase.BuildingSystem {
+namespace CodeBase.BuildingSystems {
     public class BuildingTypeHolder : MonoBehaviour {
         [SerializeField] private BuildingTypeSo _buildingType;
 

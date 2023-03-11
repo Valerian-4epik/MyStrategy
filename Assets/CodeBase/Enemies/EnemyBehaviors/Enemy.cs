@@ -1,5 +1,5 @@
 using System;
-using CodeBase.BuildingSystem.HealthSystem;
+using CodeBase.BuildingSystems.HealthSystem;
 using CodeBase.Constructions;
 using CodeBase.Data.EnemyStatsInformation;
 using UnityEngine;
@@ -24,11 +24,10 @@ namespace CodeBase.Enemies.EnemyBehaviors
         private float _lookForTargetTimerMax = 1f;
         private bool _hasTarget;
 
-        public event Action<Enemy> Died;
+        public event Action Died;
         public event Action<HealthSystem> TargetChanged;
 
         public EnemyInformation EnemyInfo => _enemyInfo;
-
         public HealthSystem Target
         {
             get => _target;
@@ -42,7 +41,7 @@ namespace CodeBase.Enemies.EnemyBehaviors
 
         public void Die()
         {
-            Died?.Invoke(this);
+            Died?.Invoke();
         }
         
         private void Update()
@@ -92,7 +91,7 @@ namespace CodeBase.Enemies.EnemyBehaviors
             if (_hasTarget)
                 return;
 
-            Building instanceCastle = BuildingSystem.BuildingSystem.Instance.Castle;
+            Building instanceCastle = BuildingSystems.BuildingSystem.Instance.Castle;
 
             if (instanceCastle.TryGetComponent(out HealthSystem healthSystem))
                 SetTarget(healthSystem);
@@ -106,7 +105,7 @@ namespace CodeBase.Enemies.EnemyBehaviors
 
         private void OnBuildingDestroed(HealthSystem building)
         {
-            SetTarget(BuildingSystem.BuildingSystem.Instance.Castle.GetComponent<HealthSystem>());
+            SetTarget(BuildingSystems.BuildingSystem.Instance.Castle.GetComponent<HealthSystem>());
         }
     }
 }
