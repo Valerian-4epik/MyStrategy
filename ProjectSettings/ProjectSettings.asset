@@ -156,7 +156,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.StartupKits.StrategyKit2
-    Standalone: unity.StartupKits.StrategyKit
+    Standalone: com.DefaultCompany.My-project
     Tizen: com.StartupKits.StrategyKit2
     iPhone: com.StartupKits.StrategyKit2
     tvOS: com.StartupKits.StrategyKit2

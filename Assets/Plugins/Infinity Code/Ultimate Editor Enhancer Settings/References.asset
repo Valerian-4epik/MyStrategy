@@ -176,10 +176,24 @@ MonoBehaviour:
     alignWindowToBar: 1
     windowMode: 0
   _sceneHistory:
-  - name: TestNavMesh
-    path: Assets/Scenes/TestNavMesh.unity
+  - name: Init
+    path: Assets/Scenes/Init.unity
+  - name: MainMenuUI
+    path: Assets/Scenes/MainMenuUI.unity
+  - name: Demo
+    path: Assets/AssetsPack/Modern UI Pack/Scenes/Demo.unity
+  - name: HungryBat_PausePopup
+    path: Assets/AssetsPack/Hungry Bat/Demos/HungryBat_PausePopup.unity
+  - name: HungryBat_Gameplay
+    path: Assets/AssetsPack/Hungry Bat/Demos/HungryBat_Gameplay.unity
+  - name: HungryBat_CompletePopup
+    path: Assets/AssetsPack/Hungry Bat/Demos/HungryBat_CompletePopup.unity
+  - name: Main
+    path: Assets/AssetsPack/GamesTan/UIFramework/Res/Scenes/Main.unity
   - name: DefenderGame
     path: Assets/Scenes/DefenderGame.unity
+  - name: TestNavMesh
+    path: Assets/Scenes/TestNavMesh.unity
   - name: VladScene 02
     path: Assets/_VLAD/Scenes/VladScene 02.unity
   - name: VladScene 03
@@ -201,17 +215,3 @@ MonoBehaviour:
       Builder Defender Game/06.1 BuilderDefenderGame_PlaceBuilding/BuilderDefenderGame/Assets/Scenes/GameScene.unity
   - name: SampleScene
     path: D:/UnityGames/Grid-Building-System-2D/Assets/Scenes/SampleScene.unity
-  - name: Game
-    path: Assets/AssetsPack/CityBuildingKit/Scenes/Game.unity
-  - name: Game
-    path: Assets/CityBuildingKit/Scenes/Game.unity
-  - name: AllResources
-    path: Assets/CityBuildingKit/Scenes/AllResources.unity
-  - name: ImportFrameworksHere
-    path: Assets/CityBuildingKit/Scenes/ImportFrameworksHere.unity
-  - name: Map01
-    path: Assets/CityBuildingKit/Scenes/Map01.unity
-  - name: Demo
-    path: Assets/AssetsPack/Isometric Tower Defense Pack/Scene/Demo.unity
-  - name: Demo
-    path: Assets/AssetsPack/Isometric Medieval Pack/Scene/Demo.unity
