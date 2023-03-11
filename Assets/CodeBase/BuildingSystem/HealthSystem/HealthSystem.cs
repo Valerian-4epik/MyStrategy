@@ -25,7 +25,6 @@ namespace CodeBase.BuildingSystem.HealthSystem {
 
             if (IsDead)
             {
-                print("должно снестись");
                 Destroed?.Invoke(this);
                 Destroy(gameObject);
             }

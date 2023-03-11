@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0a0b70cfd52e574419e377163923b946, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d57dcbd3f9564554da1784d3bd7b8205, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,6 +98,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _runOnce: 1
+--- !u!1 &1885971437829495144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8402923004872815410}
+  - component: {fileID: 6115559154454835626}
+  m_Layer: 0
+  m_Name: soldierSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8402923004872815410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885971437829495144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.642, y: -0.756, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3861532344286605574}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6115559154454835626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885971437829495144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5292e386b748b1a35e20359144e075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2738902865949902291
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,9 +156,9 @@ GameObject:
   - component: {fileID: 5352285296218688831}
   - component: {fileID: 2248488404120673979}
   - component: {fileID: -6477764984767378954}
-  - component: {fileID: -474918932833508481}
+  - component: {fileID: 3438061835887189041}
   m_Layer: 0
-  m_Name: ArcherTower_level_1
+  m_Name: BarrackTower_level_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +179,7 @@ Transform:
   - {fileID: 6386037751138218795}
   - {fileID: 2781407337033245988}
   - {fileID: 5650065541985791665}
-  - {fileID: 6355165722309183885}
+  - {fileID: 8402923004872815410}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -163,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ecdf38a3bd13a41bd5e49b67cdf73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingType: {fileID: 11400000, guid: 4fdc357730a8a3c458b07ada2cd0d4f8, type: 2}
+  _buildingType: {fileID: 11400000, guid: 709e5a275b82e7e4c94f3a3f0a3163ea, type: 2}
 --- !u!61 &5352285296218688831
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -188,7 +232,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.35, y: 1.68}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &2248488404120673979
 MonoBehaviour:
@@ -218,7 +262,7 @@ MonoBehaviour:
   area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 0, y: 0, z: 0}
---- !u!114 &-474918932833508481
+--- !u!114 &3438061835887189041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,56 +271,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2738902865949902291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84029cfb1d0cedf4fb8f360c78c1d4c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c622acc2b2c9c443a74b6f6edece11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerInformation: {fileID: 11400000, guid: 4791821df7ded064989a05ed92e5a4bc, type: 2}
-  _projectile: {fileID: 4649689562850754794, guid: 67d34aa70e43cb2449a0e7927fda8e8c,
+  _barrackInformation: {fileID: 11400000, guid: 168884fcce78b7e4eaead4add76fd526,
+    type: 2}
+  _soldier: {fileID: 7129532667005688366, guid: 72d9cfe22344caa4898d28b1ff6e1892,
     type: 3}
---- !u!1 &7592672196874272854
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6355165722309183885}
-  - component: {fileID: 2533428100219017673}
-  m_Layer: 0
-  m_Name: projectileSpawnPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6355165722309183885
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7592672196874272854}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.33, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3861532344286605574}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2533428100219017673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7592672196874272854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8f21f8cd8eceb74d85d8435742876c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2687722983176943981
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -19,7 +19,6 @@ namespace CodeBase.Enemies.EnemyBehaviors
 
         [SerializeField] private EnemyInformation _enemyInfo;
 
-        private Rigidbody2D _rigidbody2D;
         private HealthSystem _target;
         private float _lookForTargetTimer;
         private float _lookForTargetTimerMax = 1f;
@@ -43,15 +42,9 @@ namespace CodeBase.Enemies.EnemyBehaviors
 
         public void Die()
         {
-            print("умер");
             Died?.Invoke(this);
         }
-
-        private void Start()
-        {
-            _rigidbody2D = GetComponent<Rigidbody2D>();
-        }
-
+        
         private void Update()
         {
             HandleTargeting();

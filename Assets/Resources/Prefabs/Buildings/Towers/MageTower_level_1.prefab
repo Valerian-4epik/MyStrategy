@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0a0b70cfd52e574419e377163923b946, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0528d4dc9102ed149af7e44771f55305, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: -6477764984767378954}
   - component: {fileID: -474918932833508481}
   m_Layer: 0
-  m_Name: ArcherTower_level_1
+  m_Name: MageTower_level_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ecdf38a3bd13a41bd5e49b67cdf73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingType: {fileID: 11400000, guid: 4fdc357730a8a3c458b07ada2cd0d4f8, type: 2}
+  _buildingType: {fileID: 11400000, guid: ec7bf6316cf2d6e41854060a8942dc5e, type: 2}
 --- !u!61 &5352285296218688831
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -230,8 +230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84029cfb1d0cedf4fb8f360c78c1d4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerInformation: {fileID: 11400000, guid: 4791821df7ded064989a05ed92e5a4bc, type: 2}
-  _projectile: {fileID: 4649689562850754794, guid: 67d34aa70e43cb2449a0e7927fda8e8c,
+  _towerInformation: {fileID: 11400000, guid: 291afbf08c5577041866f5de3bf348de, type: 2}
+  _projectile: {fileID: 4649689562850754794, guid: feba941437f6cc64ca8d9affa9a3e349,
     type: 3}
 --- !u!1 &7592672196874272854
 GameObject:
@@ -397,7 +397,7 @@ PrefabInstance:
     - target: {fileID: 3027157657864513805, guid: fcda37e27e5ec3f47916a04a5e231e1c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.98
+      value: 0.856
       objectReference: {fileID: 0}
     - target: {fileID: 3027157657864513805, guid: fcda37e27e5ec3f47916a04a5e231e1c,
         type: 3}

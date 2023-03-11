@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 890f223dc77514f4e930f07ebd7c42fb, type: 3}
-  m_Name: ArcherTower
+  m_Name: Barrack
   m_EditorClassIdentifier: 
-  _name: ArcherTower
-  _sprite: {fileID: 21300000, guid: 0a0b70cfd52e574419e377163923b946, type: 3}
-  _transform: {fileID: 3861532344286605574, guid: 0b64422735b020841a2175b768e74e8a,
+  _name: Barrack
+  _sprite: {fileID: 21300000, guid: d57dcbd3f9564554da1784d3bd7b8205, type: 3}
+  _transform: {fileID: 3861532344286605574, guid: af68db96f4dd5c44f9ba2b88bab74b3d,
     type: 3}
-  _prefab: {fileID: 2738902865949902291, guid: 0b64422735b020841a2175b768e74e8a, type: 3}
+  _prefab: {fileID: 2738902865949902291, guid: af68db96f4dd5c44f9ba2b88bab74b3d, type: 3}
   _hasResourceGeneratorData: 0
   _resourceGeneratorData:
     TimerMax: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
   _minConstructionRadius: 3
   _constructionResourceCostArray:
   - _resourceTypeSo: {fileID: 11400000, guid: 47b701ea1b6d1d149b4b87c2f85d3743, type: 2}
-    _amount: 40
+    _amount: 100
   - _resourceTypeSo: {fileID: 11400000, guid: b161b0e9e1c3c53439a8413f365bd739, type: 2}
-    _amount: 30
+    _amount: 100
   _healthAmount: 100
