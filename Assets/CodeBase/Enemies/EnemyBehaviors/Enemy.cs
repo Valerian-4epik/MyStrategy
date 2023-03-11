@@ -89,10 +89,13 @@ namespace CodeBase.Enemies.EnemyBehaviors
                 }
             }
 
-            if (_hasTarget == false)
-            {
-                SetTarget(BuildingSystem.BuildingSystem.Instance.Castel.GetComponent<HealthSystem>());
-            }
+            if (_hasTarget)
+                return;
+
+            Building instanceCastle = BuildingSystem.BuildingSystem.Instance.Castle;
+
+            if (instanceCastle.TryGetComponent(out HealthSystem healthSystem))
+                SetTarget(healthSystem);
         }
 
         private void SetTarget(HealthSystem building)
@@ -103,7 +106,7 @@ namespace CodeBase.Enemies.EnemyBehaviors
 
         private void OnBuildingDestroed(HealthSystem building)
         {
-            SetTarget(BuildingSystem.BuildingSystem.Instance.Castel.GetComponent<HealthSystem>());
+            SetTarget(BuildingSystem.BuildingSystem.Instance.Castle.GetComponent<HealthSystem>());
         }
     }
 }

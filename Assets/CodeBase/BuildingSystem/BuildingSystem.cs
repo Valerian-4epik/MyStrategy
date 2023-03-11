@@ -11,12 +11,13 @@ namespace CodeBase.BuildingSystem
     {
         [SerializeField] private Building _castle;
 
-        public static BuildingSystem Instance { get; private set; }
         private BuildingTypeSo _buildingType;
-
+        private bool _buildingSelected;
+        
         public event Action<BuildingTypeSo> OnActivateBuildingTypeChanged;
 
-        public Building Castel => _castle;
+        public static BuildingSystem Instance { get; private set; }
+        public Building Castle => _castle;
 
         private void Awake()
         {
@@ -25,13 +26,18 @@ namespace CodeBase.BuildingSystem
 
         private void Update()
         {
-            if (!Input.GetMouseButtonDown(0) || EventSystem.current.IsPointerOverGameObject())
+            TryBuild();
+        }
+
+        private void TryBuild()
+        {
+            if (Input.GetMouseButtonDown(0) == false || EventSystem.current.IsPointerOverGameObject())
                 return;
 
-            if (_buildingType == null || !CanSpawnBuilding(_buildingType, Utils.GetMouseWorldPosition()))
+            if (_buildingSelected == false || CanSpawnBuilding(_buildingType, Utils.GetMouseWorldPosition()) == false)
                 return;
 
-            if (!ResourceSystem.ResourceSystem.Instance.CanAfford(_buildingType.ConstructionResourceCostArray))
+            if (ResourceSystem.ResourceSystem.Instance.CanAfford(_buildingType.ConstructionResourceCostArray) == false)
                 return;
 
             ResourceSystem.ResourceSystem.Instance.SpendResources(_buildingType.ConstructionResourceCostArray);
@@ -42,6 +48,7 @@ namespace CodeBase.BuildingSystem
         {
             _buildingType = buildingType;
             OnActivateBuildingTypeChanged?.Invoke(_buildingType);
+            _buildingSelected = true;
         }
 
         public BuildingTypeSo GetActiveBuildingType()
@@ -51,35 +58,35 @@ namespace CodeBase.BuildingSystem
 
         public bool CanSpawnBuilding(BuildingTypeSo buildingType, Vector3 position)
         {
-            BoxCollider2D boxCollider2D = buildingType.Prefab.GetComponent<BoxCollider2D>();
-            Collider2D[] collider2DArray =
-                Physics2D.OverlapBoxAll(position + (Vector3)boxCollider2D.offset, boxCollider2D.size, 0);
+            if (buildingType.Prefab.TryGetComponent(out BoxCollider2D boxCollider2D) == false)
+                return false;
+
+            Collider2D[] collider2DArray = Physics2D.OverlapBoxAll(position + (Vector3)boxCollider2D.offset, boxCollider2D.size, 0);
+
             bool isAreaClear = collider2DArray.Length == 0;
-            if (!isAreaClear) return false;
+            
+            if (isAreaClear == false)
+                return false;
 
             collider2DArray = Physics2D.OverlapCircleAll(position, buildingType.MinConstructionRadius);
 
-            foreach (var collider in collider2DArray)
+            foreach (Collider2D collider in collider2DArray)
             {
-                BuildingTypeHolder buildingTypeHolder = collider.GetComponent<BuildingTypeHolder>();
+                if (collider.TryGetComponent(out BuildingTypeHolder buildingTypeHolder) == false)
+                    continue;
 
-                if (buildingTypeHolder != null)
+                if (buildingTypeHolder.BuildingType == buildingType)
                 {
-                    if (buildingTypeHolder.BuildingType == buildingType)
-                    {
-                        return false;
-                    }
+                    return false;
                 }
             }
 
             float maxConstructionRadius = 10;
             collider2DArray = Physics2D.OverlapCircleAll(position, maxConstructionRadius);
 
-            foreach (var collider in collider2DArray)
+            foreach (Collider2D collider in collider2DArray)
             {
-                BuildingTypeHolder buildingTypeHolder = collider.GetComponent<BuildingTypeHolder>();
-
-                if (buildingTypeHolder != null)
+                if (collider.TryGetComponent(out BuildingTypeHolder buildingTypeHolder))
                 {
                     return true;
                 }

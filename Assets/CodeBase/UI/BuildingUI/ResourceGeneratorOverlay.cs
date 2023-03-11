@@ -19,11 +19,11 @@ namespace CodeBase.UI.BuildingUI {
 
         private void Start() {
             _icon.sprite = _resourceGeneratorData.ResourceTypeSo.Sprite;
-            _amountText.text = _resourceGenerator.GetAmountGeneratedPerSecond().ToString();
+            _amountText.text = _resourceGenerator.AmountGeneratedPerSecond.ToString();
         }
 
         private void Update() {
-            _bar.transform.localScale = new Vector3(1 - _resourceGenerator.GetTimerNormalized(), 1, 1);
+            _bar.transform.localScale = new Vector3(1 - _resourceGenerator.TimerNormalized, 1, 1);
         }
     }
 }
