@@ -10,7 +10,7 @@ namespace CodeBase.Constructions.SoldierBehaviors
         [SerializeField] private NavMeshAgent _agent;
 
         private Soldier _soldier;
-        private Enemy _target;
+        private Transform _target;
         private bool _canMove;
 
         private void Awake()
@@ -45,10 +45,17 @@ namespace CodeBase.Constructions.SoldierBehaviors
                 transform.position.z));
         }
 
-        private void OnSetupTarget(Enemy targetTransform)
+        private void OnSetupTarget(Enemy target)
         {
-            _target = targetTransform;
-            _target.Died += OnTargetDied;
+            if (target == null)
+            {
+                _target = _soldier.StartPosition;
+            }
+            else
+            {
+                _target = target.transform;
+                target.Died += OnTargetDied;
+            }
 
             _canMove = true;
         }

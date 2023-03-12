@@ -1,3 +1,4 @@
+using CodeBase.BuildingSystems.HealthSystem;
 using CodeBase.Constructions.SoldierBehaviors;
 using CodeBase.Data.TowerStatsInformation;
 using CodeBase.Utilits;
@@ -51,7 +52,7 @@ namespace CodeBase.Constructions
         }
 
         private void CheckSoldierAmount() =>
-            _canSpawn = _soldierMaxAmount != 0;
+            _canSpawn = _soldierMaxAmount > 0;
 
         private void CreateSoldier()
         {
@@ -61,7 +62,7 @@ namespace CodeBase.Constructions
             soldier.Died += AddVacation;
         }
 
-        private void AddVacation()
+        private void AddVacation(HealthSystem healthSystem)
         {
             _soldierMaxAmount++;
             CheckSoldierAmount();
