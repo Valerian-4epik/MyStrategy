@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Data.ResourceType;
+using CodeBase.ResourceSystems;
 using UnityEngine;
 
 namespace CodeBase.UI.ResourcesUI {
@@ -8,7 +9,7 @@ namespace CodeBase.UI.ResourcesUI {
         [SerializeField] private List<ResourceUISlot> _slots;
 
         private void Start() {
-            ResourceSystem.ResourceSystem.Instance.ResourceAmountChanged += TransmitInformationToSlot;
+            ResourceSystem.Instance.ResourceAmountChanged += TransmitInformationToSlot;
         }
 
         private void TransmitInformationToSlot(ResourceTypeSo type, int value) {

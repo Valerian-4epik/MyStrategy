@@ -1,6 +1,7 @@
 using System;
 using CodeBase.Constructions;
 using CodeBase.Data.BuildingType;
+using CodeBase.ResourceSystems;
 using CodeBase.Services.Abstract;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,7 +15,8 @@ namespace CodeBase.BuildingSystems
         private BuildingTypeSo _buildingType;
         private bool _buildingSelected;
         
-        public event Action<BuildingTypeSo> OnActivateBuildingTypeChanged;
+        public event Action<BuildingTypeSo> ActivateBuildingTypeChanged;
+        public event Action DeactivateBuildingGhost;
 
         public static BuildingSystem Instance { get; private set; }
         public Building Castle => _castle;
@@ -37,17 +39,19 @@ namespace CodeBase.BuildingSystems
             if (_buildingSelected == false || CanSpawnBuilding(_buildingType, Utils.GetMouseWorldPosition()) == false)
                 return;
 
-            if (ResourceSystem.ResourceSystem.Instance.CanAfford(_buildingType.ConstructionResourceCostArray) == false)
+            if (ResourceSystem.Instance.CanAfford(_buildingType.ConstructionResourceCostArray) == false)
                 return;
 
-            ResourceSystem.ResourceSystem.Instance.SpendResources(_buildingType.ConstructionResourceCostArray);
+            ResourceSystem.Instance.SpendResources(_buildingType.ConstructionResourceCostArray);
             Instantiate(_buildingType.Transform, Utils.GetMouseWorldPosition(), Quaternion.identity);
+            _buildingSelected = false;
+            DeactivateBuildingGhost?.Invoke();
         }
 
         public void SetBuildingType(BuildingTypeSo buildingType)
         {
             _buildingType = buildingType;
-            OnActivateBuildingTypeChanged?.Invoke(_buildingType);
+            ActivateBuildingTypeChanged?.Invoke(_buildingType);
             _buildingSelected = true;
         }
 

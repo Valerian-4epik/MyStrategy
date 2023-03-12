@@ -1,9 +1,8 @@
-using System.Linq;
 using CodeBase.BuildingSystems;
-using CodeBase.ResourceSystem.Abstract;
+using CodeBase.ResourceSystems.Abstract;
 using UnityEngine;
 
-namespace CodeBase.ResourceSystem
+namespace CodeBase.ResourceSystems
 {
     public class ResourceGenerator : MonoBehaviour
     {

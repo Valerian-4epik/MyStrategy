@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using CodeBase.ResourceSystem;
+using CodeBase.ResourceSystems;
 
 namespace CodeBase.Data.TowerStatsInformation
 {

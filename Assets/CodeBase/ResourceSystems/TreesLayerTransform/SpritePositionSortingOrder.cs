@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CodeBase.ResourceSystem.TreesLayerTransform {
+namespace CodeBase.ResourceSystems.TreesLayerTransform {
     public class SpritePositionSortingOrder : MonoBehaviour {
         [SerializeField] private bool _runOnce;
         

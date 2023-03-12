@@ -1,6 +1,6 @@
 using CodeBase.Data.ResourceType;
 
-namespace CodeBase.ResourceSystem.Abstract {
+namespace CodeBase.ResourceSystems.Abstract {
     [System.Serializable]
     public class ResourceGeneratorData {
         public float TimerMax;

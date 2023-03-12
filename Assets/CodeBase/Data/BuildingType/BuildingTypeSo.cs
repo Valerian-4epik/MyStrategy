@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using CodeBase.ResourceSystem;
-using CodeBase.ResourceSystem.Abstract;
+using CodeBase.ResourceSystems;
+using CodeBase.ResourceSystems.Abstract;
 using UnityEngine;
 
 namespace CodeBase.Data.BuildingType

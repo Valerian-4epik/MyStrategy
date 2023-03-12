@@ -1,7 +1,7 @@
 using CodeBase.Data.ResourceType;
 using UnityEngine;
 
-namespace CodeBase.ResourceSystem {
+namespace CodeBase.ResourceSystems {
     [System.Serializable]
     public class ResourceAmount {
         [SerializeField] private ResourceTypeSo _resourceTypeSo;

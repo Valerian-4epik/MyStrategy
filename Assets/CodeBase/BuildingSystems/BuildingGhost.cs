@@ -8,7 +8,7 @@ namespace CodeBase.BuildingSystems
     public class BuildingGhost : MonoBehaviour
     {
         [SerializeField] private GameObject _spriteObject;
-        [SerializeField] private BuildingSystems.BuildingSystem _buildingSystem;
+        [SerializeField] private BuildingSystem _buildingSystem;
         [SerializeField] private Color32 _acceptColor;
         [SerializeField] private Color32 _refuseColor;
 
@@ -28,7 +28,9 @@ namespace CodeBase.BuildingSystems
 
         private void Start()
         {
-            BuildingSystems.BuildingSystem.Instance.OnActivateBuildingTypeChanged += OnActiveBuildingType;
+            var buildingSystem = BuildingSystem.Instance;
+            buildingSystem.ActivateBuildingTypeChanged += ActiveBuildingType;
+            buildingSystem.DeactivateBuildingGhost += RestartBuildingType;
         }
 
         private void LateUpdate()
@@ -46,10 +48,10 @@ namespace CodeBase.BuildingSystems
             transform.position = Utils.GetMouseWorldPosition();
         }
 
-        private void OnActiveBuildingType(BuildingTypeSo buildingType)
+        private void ActiveBuildingType(BuildingTypeSo buildingType)
         {
             _buildingType = buildingType;
-            var type = BuildingSystems.BuildingSystem.Instance.GetActiveBuildingType();
+            var type = BuildingSystem.Instance.GetActiveBuildingType();
             Show(type.Sprite);
 
             if (type.HasResourceGeneratorData)
@@ -72,6 +74,12 @@ namespace CodeBase.BuildingSystems
         private void Hide()
         {
             _spriteObject.SetActive(false);
+        }
+
+        private void RestartBuildingType()
+        {
+            Hide();
+            _resourceNearbyOverlay.Hide();
         }
     }
 }

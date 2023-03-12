@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using CodeBase.Data.ResourceType;
 using UnityEngine;
 
-namespace CodeBase.ResourceSystem {
+namespace CodeBase.ResourceSystems {
     public class ResourceSystem : MonoBehaviour {
         public static ResourceSystem Instance { get; private set; }
 
