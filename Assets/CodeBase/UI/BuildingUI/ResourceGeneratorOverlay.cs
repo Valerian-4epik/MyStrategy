@@ -1,5 +1,5 @@
-using CodeBase.ResourceSystem;
-using CodeBase.ResourceSystem.Abstract;
+using CodeBase.ResourceSystems;
+using CodeBase.ResourceSystems.Abstract;
 using TMPro;
 using UnityEngine;
 

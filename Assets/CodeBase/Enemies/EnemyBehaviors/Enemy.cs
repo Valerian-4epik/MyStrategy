@@ -105,7 +105,7 @@ namespace CodeBase.Enemies.EnemyBehaviors
 
         private void OnBuildingDestroed(HealthSystem building)
         {
-            SetTarget(BuildingSystems.BuildingSystem.Instance.Castle.GetComponent<HealthSystem>());
+            _hasTarget = false;
         }
     }
 }

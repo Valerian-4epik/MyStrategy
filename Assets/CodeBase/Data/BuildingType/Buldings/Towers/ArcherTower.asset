@@ -28,5 +28,5 @@ MonoBehaviour:
   - _resourceTypeSo: {fileID: 11400000, guid: 47b701ea1b6d1d149b4b87c2f85d3743, type: 2}
     _amount: 40
   - _resourceTypeSo: {fileID: 11400000, guid: b161b0e9e1c3c53439a8413f365bd739, type: 2}
-    _amount: 30
+    _amount: 50
   _healthAmount: 100
