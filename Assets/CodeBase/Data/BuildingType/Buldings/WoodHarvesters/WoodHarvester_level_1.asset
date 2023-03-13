@@ -10,19 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 890f223dc77514f4e930f07ebd7c42fb, type: 3}
-  m_Name: WoodHarvester
+  m_Name: WoodHarvester_level_1
   m_EditorClassIdentifier: 
-  _name: WoodHarvester
+  _name: WoodHarvester_level_1
   _sprite: {fileID: 21300000, guid: 19ac85e4e5fc18f4f8a4cf7990d3d3b0, type: 3}
   _transform: {fileID: 3748678606905272286, guid: 9ff3de77529c1844eadae9e7659de8cc,
     type: 3}
   _prefab: {fileID: 8459242648148798811, guid: 9ff3de77529c1844eadae9e7659de8cc, type: 3}
   _hasResourceGeneratorData: 1
   _resourceGeneratorData:
-    TimerMax: 0.5
+    TimerMax: 2.5
     ResourceTypeSo: {fileID: 11400000, guid: 47b701ea1b6d1d149b4b87c2f85d3743, type: 2}
     ResourceDetectionRadius: 2
-    MaxResourceAmount: 4
+    MaxResourceAmount: 5
+    _ignoreLayerMask:
+      serializedVersion: 2
+      m_Bits: 32768
   _minConstructionRadius: 0.1
   _constructionResourceCostArray:
   - _resourceTypeSo: {fileID: 11400000, guid: 47b701ea1b6d1d149b4b87c2f85d3743, type: 2}
