@@ -6,13 +6,17 @@ namespace CodeBase.ResourceSystems
 {
     public class ResourceGenerator : MonoBehaviour
     {
-        private ResourceGeneratorData _resourceGeneratorData;
+        private static ResourceGeneratorData _resourceGeneratorData;
         private float _timer;
         private float _timerMax;
 
         public ResourceGeneratorData ResourceGeneratorData => _resourceGeneratorData;
         public float TimerNormalized => _timer / _timerMax;
-        public float AmountGeneratedPerSecond => 1 / _timerMax;
+
+        public float AmountGeneratedPerSecond
+        {
+            get { return _timerMax; } //return 1 / 
+        }
 
         private void Awake()
         {
@@ -50,7 +54,7 @@ namespace CodeBase.ResourceSystems
         {
             Collider2D[] colliders =
                 Physics2D.OverlapCircleAll(position, resourceGeneratorData.ResourceDetectionRadius);
-            
+
             int nearbyResourceAmount = 0;
 
             foreach (Collider2D collider in colliders)

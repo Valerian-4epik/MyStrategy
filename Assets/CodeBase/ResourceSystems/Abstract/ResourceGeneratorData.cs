@@ -1,4 +1,5 @@
 using CodeBase.Data.ResourceType;
+using UnityEngine;
 
 namespace CodeBase.ResourceSystems.Abstract {
     [System.Serializable]
@@ -7,5 +8,6 @@ namespace CodeBase.ResourceSystems.Abstract {
         public ResourceTypeSo ResourceTypeSo;
         public float ResourceDetectionRadius;
         public int MaxResourceAmount;
+        public LayerMask _ignoreLayerMask;
     }
 }

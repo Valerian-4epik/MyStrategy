@@ -11,10 +11,11 @@ namespace CodeBase.BuildingSystems
     public class BuildingSystem : MonoBehaviour
     {
         [SerializeField] private Building _castle;
+        // [SerializeField] private LayerMask _ignoreLayerMask;
 
         private BuildingTypeSo _buildingType;
         private bool _buildingSelected;
-        
+
         public event Action<BuildingTypeSo> ActivateBuildingTypeChanged;
         public event Action DeactivateBuildingGhost;
 
@@ -65,10 +66,11 @@ namespace CodeBase.BuildingSystems
             if (buildingType.Prefab.TryGetComponent(out BoxCollider2D boxCollider2D) == false)
                 return false;
 
-            Collider2D[] collider2DArray = Physics2D.OverlapBoxAll(position + (Vector3)boxCollider2D.offset, boxCollider2D.size, 0);
+            Collider2D[] collider2DArray = Physics2D.OverlapBoxAll(position + (Vector3)boxCollider2D.offset,
+                boxCollider2D.size, 0);
 
             bool isAreaClear = collider2DArray.Length == 0;
-            
+
             if (isAreaClear == false)
                 return false;
 
