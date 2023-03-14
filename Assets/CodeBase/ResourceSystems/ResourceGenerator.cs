@@ -6,7 +6,7 @@ namespace CodeBase.ResourceSystems
 {
     public class ResourceGenerator : MonoBehaviour
     {
-        private static ResourceGeneratorData _resourceGeneratorData;
+        private ResourceGeneratorData _resourceGeneratorData;
         private float _timer;
         private float _timerMax;
 

@@ -85,6 +85,11 @@ namespace CodeBase.BuildingSystems
                 {
                     return false;
                 }
+
+                if (buildingType.HasResourceGeneratorData && buildingTypeHolder.BuildingType)
+                {
+                    return false;
+                }
             }
 
             float maxConstructionRadius = 10;
