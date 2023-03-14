@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 890f223dc77514f4e930f07ebd7c42fb, type: 3}
-  m_Name: WoodHarvester_level_2
+  m_Name: ArcherTower_level_1
   m_EditorClassIdentifier: 
-  _name: WoodHarvester_level_2
-  _sprite: {fileID: 21300000, guid: 19ac85e4e5fc18f4f8a4cf7990d3d3b0, type: 3}
-  _transform: {fileID: 3748678606905272286, guid: 9ff3de77529c1844eadae9e7659de8cc,
+  _name: ArcherTower_level_1
+  _sprite: {fileID: 21300000, guid: 0a0b70cfd52e574419e377163923b946, type: 3}
+  _transform: {fileID: 3861532344286605574, guid: 0b64422735b020841a2175b768e74e8a,
     type: 3}
-  _prefab: {fileID: 8459242648148798811, guid: 9ff3de77529c1844eadae9e7659de8cc, type: 3}
-  _hasResourceGeneratorData: 1
+  _prefab: {fileID: 2738902865949902291, guid: 0b64422735b020841a2175b768e74e8a, type: 3}
+  _hasResourceGeneratorData: 0
   _resourceGeneratorData:
-    TimerMax: 2
-    ResourceTypeSo: {fileID: 11400000, guid: 47b701ea1b6d1d149b4b87c2f85d3743, type: 2}
-    ResourceDetectionRadius: 2
-    MaxResourceAmount: 5
+    TimerMax: 0
+    ResourceTypeSo: {fileID: 0}
+    ResourceDetectionRadius: 0
+    MaxResourceAmount: 0
     _ignoreLayerMask:
       serializedVersion: 2
-      m_Bits: 32768
-  _minConstructionRadius: 1.5
+      m_Bits: 0
+  _minConstructionRadius: 3
   _constructionResourceCostArray:
   - _resourceTypeSo: {fileID: 11400000, guid: 47b701ea1b6d1d149b4b87c2f85d3743, type: 2}
-    _amount: 30
+    _amount: 40
   - _resourceTypeSo: {fileID: 11400000, guid: b161b0e9e1c3c53439a8413f365bd739, type: 2}
-    _amount: 30
-  _healthAmount: 0
+    _amount: 50
+  _healthAmount: 100
